@@ -23,13 +23,15 @@ struct ContentView: View {
                 //목적지의 UI를 Text로 전달
                 NavigationLink(destination:
                     //text 뷰만 주어졌으므로 텍스트 라벨 하나만 보여짐
-                    Text(carMaker.name)){
+//                    Text(carMaker.name)){
+                                CarMakerDetail(carMaker: carMaker)){
+                    CarMakerCell(carMaker: carMaker)
                     
                     //각 Row에 CarMakerCell를 리턴
-                    CarMakerCell(carMaker: carMaker)
+//                    CarMakerCell(carMaker: carMaker)
                 }
-                 
-             }.navigationBarTitle("자동차 제조사")
+                 //조금 더 간결히 하기 위해 displayMode를 변경
+             }.navigationBarTitle("자동차 제조사", displayMode: .inline)
         }
     }
 }
