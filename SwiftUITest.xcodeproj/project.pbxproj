@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		452493A2252C0A2100AAF843 /* SwiftUIStepperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493A1252C0A2100AAF843 /* SwiftUIStepperTest.swift */; };
+		452493A6252C0D4B00AAF843 /* SwiftUINavigarionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493A5252C0D4B00AAF843 /* SwiftUINavigarionDetailView.swift */; };
+		452493A9252C20D700AAF843 /* SwiftUITabViewContent1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493A8252C20D700AAF843 /* SwiftUITabViewContent1.swift */; };
+		452493AD252C20E200AAF843 /* SwiftUITabViewContent2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493AC252C20E200AAF843 /* SwiftUITabViewContent2.swift */; };
+		4529652D2529E2CB006DDBE8 /* SwiftUITextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529652C2529E2CB006DDBE8 /* SwiftUITextFieldTest.swift */; };
+		452965302529E2E9006DDBE8 /* SwiftUIListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529652F2529E2E9006DDBE8 /* SwiftUIListTest.swift */; };
+		452965332529E377006DDBE8 /* SwiftUIFormTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965322529E377006DDBE8 /* SwiftUIFormTest.swift */; };
+		452965362529E385006DDBE8 /* SwiftUIPickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965352529E385006DDBE8 /* SwiftUIPickerTest.swift */; };
+		452965392529E392006DDBE8 /* SwiftUISliderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965382529E392006DDBE8 /* SwiftUISliderTest.swift */; };
+		4529653C2529E3A2006DDBE8 /* SwiftUINavigationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529653B2529E3A2006DDBE8 /* SwiftUINavigationViewTest.swift */; };
+		4529653F2529E3AD006DDBE8 /* SwiftUITabViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529653E2529E3AD006DDBE8 /* SwiftUITabViewTest.swift */; };
+		452965422529E3B6006DDBE8 /* SwiftUIAlertTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965412529E3B6006DDBE8 /* SwiftUIAlertTest.swift */; };
+		452965452529E3C1006DDBE8 /* SwiftUIAcionSheetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965442529E3C1006DDBE8 /* SwiftUIAcionSheetTest.swift */; };
+		452965482529E3CC006DDBE8 /* SwiftUIPreviewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965472529E3CC006DDBE8 /* SwiftUIPreviewTest.swift */; };
+		4529654D2529F1CD006DDBE8 /* SwiftUIDinamicListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529654C2529F1CD006DDBE8 /* SwiftUIDinamicListTest.swift */; };
+		452965502529F23D006DDBE8 /* SwiftUIListDeleteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529654F2529F23D006DDBE8 /* SwiftUIListDeleteTest.swift */; };
+		452965532529F2D7006DDBE8 /* SwiftUIListEditTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965522529F2D7006DDBE8 /* SwiftUIListEditTest.swift */; };
+		452965562529F334006DDBE8 /* SwiftUIListSectionGroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965552529F334006DDBE8 /* SwiftUIListSectionGroupTest.swift */; };
+		4529655B2529F846006DDBE8 /* SwiftUIFormSectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529655A2529F846006DDBE8 /* SwiftUIFormSectionTest.swift */; };
+		4529655E2529F889006DDBE8 /* SwiftUIFormDisableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529655D2529F889006DDBE8 /* SwiftUIFormDisableTest.swift */; };
+		452965612529F91C006DDBE8 /* SwiftUIFormHideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965602529F91C006DDBE8 /* SwiftUIFormHideTest.swift */; };
+		452965642529F9FE006DDBE8 /* SwiftUIScrollViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452965632529F9FE006DDBE8 /* SwiftUIScrollViewTest.swift */; };
+		45296568252A00FD006DDBE8 /* SwiftUIPickerInFormTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45296567252A00FD006DDBE8 /* SwiftUIPickerInFormTest.swift */; };
+		452B7C2225287F52001D261E /* SwiftUIViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B7C2125287F52001D261E /* SwiftUIViewTest.swift */; };
 		45594E052522F8A2001ADDCC /* SwiftUITestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */; };
 		45594E072522F8A2001ADDCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E062522F8A2001ADDCC /* ContentView.swift */; };
 		45594E092522F8A2001ADDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45594E082522F8A2001ADDCC /* Assets.xcassets */; };
@@ -14,9 +38,36 @@
 		45594E1925230274001ADDCC /* SwiftUITextTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E1825230274001ADDCC /* SwiftUITextTest.swift */; };
 		45594E1D252302FE001ADDCC /* SwiftUIDateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E1C252302FE001ADDCC /* SwiftUIDateTest.swift */; };
 		45594E2025230350001ADDCC /* SwiftUIImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E1F25230350001ADDCC /* SwiftUIImageTest.swift */; };
+		456E8BB22527415300B94C90 /* SwiftUIButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E8BB12527415300B94C90 /* SwiftUIButtonTest.swift */; };
+		456E8BB62527458F00B94C90 /* SwiftUINavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E8BB52527458F00B94C90 /* SwiftUINavigationLink.swift */; };
+		456E8BBA2527476800B94C90 /* SwiftUIToggleSwitchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E8BB92527476800B94C90 /* SwiftUIToggleSwitchTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		452493A1252C0A2100AAF843 /* SwiftUIStepperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIStepperTest.swift; sourceTree = "<group>"; };
+		452493A5252C0D4B00AAF843 /* SwiftUINavigarionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINavigarionDetailView.swift; sourceTree = "<group>"; };
+		452493A8252C20D700AAF843 /* SwiftUITabViewContent1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITabViewContent1.swift; sourceTree = "<group>"; };
+		452493AC252C20E200AAF843 /* SwiftUITabViewContent2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITabViewContent2.swift; sourceTree = "<group>"; };
+		4529652C2529E2CB006DDBE8 /* SwiftUITextFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITextFieldTest.swift; sourceTree = "<group>"; };
+		4529652F2529E2E9006DDBE8 /* SwiftUIListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListTest.swift; sourceTree = "<group>"; };
+		452965322529E377006DDBE8 /* SwiftUIFormTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFormTest.swift; sourceTree = "<group>"; };
+		452965352529E385006DDBE8 /* SwiftUIPickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPickerTest.swift; sourceTree = "<group>"; };
+		452965382529E392006DDBE8 /* SwiftUISliderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISliderTest.swift; sourceTree = "<group>"; };
+		4529653B2529E3A2006DDBE8 /* SwiftUINavigationViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINavigationViewTest.swift; sourceTree = "<group>"; };
+		4529653E2529E3AD006DDBE8 /* SwiftUITabViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITabViewTest.swift; sourceTree = "<group>"; };
+		452965412529E3B6006DDBE8 /* SwiftUIAlertTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAlertTest.swift; sourceTree = "<group>"; };
+		452965442529E3C1006DDBE8 /* SwiftUIAcionSheetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAcionSheetTest.swift; sourceTree = "<group>"; };
+		452965472529E3CC006DDBE8 /* SwiftUIPreviewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreviewTest.swift; sourceTree = "<group>"; };
+		4529654C2529F1CD006DDBE8 /* SwiftUIDinamicListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDinamicListTest.swift; sourceTree = "<group>"; };
+		4529654F2529F23D006DDBE8 /* SwiftUIListDeleteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListDeleteTest.swift; sourceTree = "<group>"; };
+		452965522529F2D7006DDBE8 /* SwiftUIListEditTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListEditTest.swift; sourceTree = "<group>"; };
+		452965552529F334006DDBE8 /* SwiftUIListSectionGroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListSectionGroupTest.swift; sourceTree = "<group>"; };
+		4529655A2529F846006DDBE8 /* SwiftUIFormSectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFormSectionTest.swift; sourceTree = "<group>"; };
+		4529655D2529F889006DDBE8 /* SwiftUIFormDisableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFormDisableTest.swift; sourceTree = "<group>"; };
+		452965602529F91C006DDBE8 /* SwiftUIFormHideTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFormHideTest.swift; sourceTree = "<group>"; };
+		452965632529F9FE006DDBE8 /* SwiftUIScrollViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIScrollViewTest.swift; sourceTree = "<group>"; };
+		45296567252A00FD006DDBE8 /* SwiftUIPickerInFormTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPickerInFormTest.swift; sourceTree = "<group>"; };
+		452B7C2125287F52001D261E /* SwiftUIViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewTest.swift; sourceTree = "<group>"; };
 		45594E012522F8A2001ADDCC /* SwiftUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestApp.swift; sourceTree = "<group>"; };
 		45594E062522F8A2001ADDCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +77,9 @@
 		45594E1825230274001ADDCC /* SwiftUITextTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITextTest.swift; sourceTree = "<group>"; };
 		45594E1C252302FE001ADDCC /* SwiftUIDateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDateTest.swift; sourceTree = "<group>"; };
 		45594E1F25230350001ADDCC /* SwiftUIImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIImageTest.swift; sourceTree = "<group>"; };
+		456E8BB12527415300B94C90 /* SwiftUIButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIButtonTest.swift; sourceTree = "<group>"; };
+		456E8BB52527458F00B94C90 /* SwiftUINavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINavigationLink.swift; sourceTree = "<group>"; };
+		456E8BB92527476800B94C90 /* SwiftUIToggleSwitchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIToggleSwitchTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +117,33 @@
 				45594E1825230274001ADDCC /* SwiftUITextTest.swift */,
 				45594E1C252302FE001ADDCC /* SwiftUIDateTest.swift */,
 				45594E1F25230350001ADDCC /* SwiftUIImageTest.swift */,
+				456E8BB12527415300B94C90 /* SwiftUIButtonTest.swift */,
+				456E8BB52527458F00B94C90 /* SwiftUINavigationLink.swift */,
+				456E8BB92527476800B94C90 /* SwiftUIToggleSwitchTest.swift */,
+				452B7C2125287F52001D261E /* SwiftUIViewTest.swift */,
+				4529652C2529E2CB006DDBE8 /* SwiftUITextFieldTest.swift */,
+				4529652F2529E2E9006DDBE8 /* SwiftUIListTest.swift */,
+				4529654C2529F1CD006DDBE8 /* SwiftUIDinamicListTest.swift */,
+				4529654F2529F23D006DDBE8 /* SwiftUIListDeleteTest.swift */,
+				452965522529F2D7006DDBE8 /* SwiftUIListEditTest.swift */,
+				452965552529F334006DDBE8 /* SwiftUIListSectionGroupTest.swift */,
+				452965322529E377006DDBE8 /* SwiftUIFormTest.swift */,
+				4529655A2529F846006DDBE8 /* SwiftUIFormSectionTest.swift */,
+				4529655D2529F889006DDBE8 /* SwiftUIFormDisableTest.swift */,
+				452965602529F91C006DDBE8 /* SwiftUIFormHideTest.swift */,
+				452965632529F9FE006DDBE8 /* SwiftUIScrollViewTest.swift */,
+				452965352529E385006DDBE8 /* SwiftUIPickerTest.swift */,
+				45296567252A00FD006DDBE8 /* SwiftUIPickerInFormTest.swift */,
+				452965382529E392006DDBE8 /* SwiftUISliderTest.swift */,
+				452493A1252C0A2100AAF843 /* SwiftUIStepperTest.swift */,
+				4529653B2529E3A2006DDBE8 /* SwiftUINavigationViewTest.swift */,
+				452493A5252C0D4B00AAF843 /* SwiftUINavigarionDetailView.swift */,
+				4529653E2529E3AD006DDBE8 /* SwiftUITabViewTest.swift */,
+				452493A8252C20D700AAF843 /* SwiftUITabViewContent1.swift */,
+				452493AC252C20E200AAF843 /* SwiftUITabViewContent2.swift */,
+				452965412529E3B6006DDBE8 /* SwiftUIAlertTest.swift */,
+				452965442529E3C1006DDBE8 /* SwiftUIAcionSheetTest.swift */,
+				452965472529E3CC006DDBE8 /* SwiftUIPreviewTest.swift */,
 				45594E082522F8A2001ADDCC /* Assets.xcassets */,
 				45594E0D2522F8A2001ADDCC /* Info.plist */,
 				45594E0A2522F8A2001ADDCC /* Preview Content */,
@@ -147,11 +228,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4529653F2529E3AD006DDBE8 /* SwiftUITabViewTest.swift in Sources */,
+				452493AD252C20E200AAF843 /* SwiftUITabViewContent2.swift in Sources */,
+				452493A9252C20D700AAF843 /* SwiftUITabViewContent1.swift in Sources */,
+				452965482529E3CC006DDBE8 /* SwiftUIPreviewTest.swift in Sources */,
+				452965392529E392006DDBE8 /* SwiftUISliderTest.swift in Sources */,
+				4529654D2529F1CD006DDBE8 /* SwiftUIDinamicListTest.swift in Sources */,
+				4529655E2529F889006DDBE8 /* SwiftUIFormDisableTest.swift in Sources */,
+				452493A6252C0D4B00AAF843 /* SwiftUINavigarionDetailView.swift in Sources */,
+				452965642529F9FE006DDBE8 /* SwiftUIScrollViewTest.swift in Sources */,
+				452B7C2225287F52001D261E /* SwiftUIViewTest.swift in Sources */,
+				4529652D2529E2CB006DDBE8 /* SwiftUITextFieldTest.swift in Sources */,
+				452965452529E3C1006DDBE8 /* SwiftUIAcionSheetTest.swift in Sources */,
 				45594E2025230350001ADDCC /* SwiftUIImageTest.swift in Sources */,
+				452965332529E377006DDBE8 /* SwiftUIFormTest.swift in Sources */,
 				45594E1D252302FE001ADDCC /* SwiftUIDateTest.swift in Sources */,
+				452965362529E385006DDBE8 /* SwiftUIPickerTest.swift in Sources */,
+				4529655B2529F846006DDBE8 /* SwiftUIFormSectionTest.swift in Sources */,
+				452965612529F91C006DDBE8 /* SwiftUIFormHideTest.swift in Sources */,
+				452965532529F2D7006DDBE8 /* SwiftUIListEditTest.swift in Sources */,
+				45296568252A00FD006DDBE8 /* SwiftUIPickerInFormTest.swift in Sources */,
+				4529653C2529E3A2006DDBE8 /* SwiftUINavigationViewTest.swift in Sources */,
+				452493A2252C0A2100AAF843 /* SwiftUIStepperTest.swift in Sources */,
+				452965422529E3B6006DDBE8 /* SwiftUIAlertTest.swift in Sources */,
+				452965302529E2E9006DDBE8 /* SwiftUIListTest.swift in Sources */,
 				45594E072522F8A2001ADDCC /* ContentView.swift in Sources */,
 				45594E052522F8A2001ADDCC /* SwiftUITestApp.swift in Sources */,
+				456E8BB62527458F00B94C90 /* SwiftUINavigationLink.swift in Sources */,
+				452965502529F23D006DDBE8 /* SwiftUIListDeleteTest.swift in Sources */,
 				45594E1925230274001ADDCC /* SwiftUITextTest.swift in Sources */,
+				456E8BB22527415300B94C90 /* SwiftUIButtonTest.swift in Sources */,
+				456E8BBA2527476800B94C90 /* SwiftUIToggleSwitchTest.swift in Sources */,
+				452965562529F334006DDBE8 /* SwiftUIListSectionGroupTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
