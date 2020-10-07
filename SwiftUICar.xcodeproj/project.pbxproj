@@ -14,6 +14,9 @@
 		452493EC252C373500AAF843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452493EB252C373500AAF843 /* Assets.xcassets */; };
 		452493EF252C373500AAF843 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452493EE252C373500AAF843 /* Preview Assets.xcassets */; };
 		452493F2252C373500AAF843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452493F0252C373500AAF843 /* LaunchScreen.storyboard */; };
+		452493FB252C37F500AAF843 /* CarMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493FA252C37F500AAF843 /* CarMaker.swift */; };
+		452493FF252C397E00AAF843 /* CarMakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493FE252C397E00AAF843 /* CarMakerCell.swift */; };
+		45249402252C3C4800AAF843 /* CarMakerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45249401252C3C4800AAF843 /* CarMakerDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		452493EE252C373500AAF843 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		452493F1252C373500AAF843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		452493F3252C373500AAF843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		452493FA252C37F500AAF843 /* CarMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMaker.swift; sourceTree = "<group>"; };
+		452493FE252C397E00AAF843 /* CarMakerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakerCell.swift; sourceTree = "<group>"; };
+		45249401252C3C4800AAF843 /* CarMakerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakerDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 				452493E2252C373200AAF843 /* AppDelegate.swift */,
 				452493E4252C373300AAF843 /* SceneDelegate.swift */,
 				452493E6252C373300AAF843 /* ContentView.swift */,
+				45249401252C3C4800AAF843 /* CarMakerDetail.swift */,
+				452493FE252C397E00AAF843 /* CarMakerCell.swift */,
+				452493FA252C37F500AAF843 /* CarMaker.swift */,
 				452493EB252C373500AAF843 /* Assets.xcassets */,
 				452493F0252C373500AAF843 /* LaunchScreen.storyboard */,
 				452493F3252C373500AAF843 /* Info.plist */,
@@ -148,9 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45249402252C3C4800AAF843 /* CarMakerDetail.swift in Sources */,
 				452493EA252C373300AAF843 /* SwiftUICar.xcdatamodeld in Sources */,
 				452493E3252C373200AAF843 /* AppDelegate.swift in Sources */,
 				452493E5252C373300AAF843 /* SceneDelegate.swift in Sources */,
+				452493FF252C397E00AAF843 /* CarMakerCell.swift in Sources */,
+				452493FB252C37F500AAF843 /* CarMaker.swift in Sources */,
 				452493E7252C373300AAF843 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
