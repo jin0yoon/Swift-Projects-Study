@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         //이곳에서 contentView를 생성
-        let contentView = ContentView().environment(\.managedObjectContext, context)
+        let contentView = MemoListScene().environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
         //이곳에서 첫번째 화면에 표시하고 있음
