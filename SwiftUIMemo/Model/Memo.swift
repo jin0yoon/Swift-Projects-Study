@@ -8,8 +8,8 @@
 import SwiftUI
 
 //Identifiable -> 데이터 목록을 테이블뷰나 컬렉션 뷰에 쉽게 바인딩할 수 있음
-//ObservedObject -> 반응형 UI를 구현하기 위해서 필요
-class Memo: Identifiable, ObservedObject{
+//ObservableObject -> 반응형 UI를 구현하기 위해서 필요
+class Memo: Identifiable, ObservableObject{
     //프로토콜이 요구하는 속성과 메모를 저장하는데 필요한 속성 선언
     
     //Identifiable이 요구하는 속성. 메모를 유일하게 구분할 때 사용
