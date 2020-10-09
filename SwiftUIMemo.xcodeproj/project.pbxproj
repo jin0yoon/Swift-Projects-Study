@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4509B7D625306099006C3A0C /* DateFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509B7D525306099006C3A0C /* DateFormatter+Memo.swift */; };
+		4509B7DB2530682D006C3A0C /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509B7DA2530682D006C3A0C /* MemoCell.swift */; };
 		452493BF252C34C000AAF843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493BE252C34C000AAF843 /* AppDelegate.swift */; };
 		452493C1252C34C000AAF843 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493C0252C34C000AAF843 /* SceneDelegate.swift */; };
 		452493C3252C34C000AAF843 /* MemoListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452493C2252C34C000AAF843 /* MemoListScene.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		4509B7D525306099006C3A0C /* DateFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Memo.swift"; sourceTree = "<group>"; };
+		4509B7DA2530682D006C3A0C /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		452493BB252C34C000AAF843 /* SwiftUIMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452493BE252C34C000AAF843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452493C0252C34C000AAF843 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4509B7D925306812006C3A0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4509B7DA2530682D006C3A0C /* MemoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		452493B2252C34C000AAF843 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 		452493BD252C34C000AAF843 /* SwiftUIMemo */ = {
 			isa = PBXGroup;
 			children = (
+				4509B7D925306812006C3A0C /* View */,
 				4509B7D425306076006C3A0C /* Extension */,
 				45F5B533252EFFAC00DAB2A3 /* Model */,
 				452493BE252C34C000AAF843 /* AppDelegate.swift */,
@@ -180,6 +191,7 @@
 				452493C1252C34C000AAF843 /* SceneDelegate.swift in Sources */,
 				452493C3252C34C000AAF843 /* MemoListScene.swift in Sources */,
 				45F5B535252EFFCD00DAB2A3 /* Memo.swift in Sources */,
+				4509B7DB2530682D006C3A0C /* MemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,17 +28,7 @@ struct MemoListScene: View {
             //클로저 추가
             //배열에 저장되어 있는 메모가 아래의 파라미터로 전달되는데
             List(store.list) { memo in
-                VStack(alignment: .leading) {  //VStack에 포함된 모든 view가 왼쪽에 정렬됨
-                    Text(memo.content) //일단 텍스트로 메모 내용을 출력
-                        .font(.body)
-                        .lineLimit(1)  //메모 내용을 한줄로만 표시하고 내용이 길다면 뒷부분을 생략
-                    
-                    //메모 작성 일자 추가
-                    Text("\(memo.insertDate, formatter: self.formatter)")  //string interpolation 구문으로 바꾼 다음 formatter 파라미터로 formatter 속성을 전달
-                        .font(.caption)
-                        .foregroundColor(Color(UIColor.secondaryLabel))  //내용과 날짜를 구분
-                        
-                }
+                MemoCell(memo: memo)
             }
             //Navigation bar에 title 표시
             //새로운 modifier 추가.
@@ -57,3 +47,5 @@ struct MemoListScene_Previews: PreviewProvider {
             .environmentObject(DateFormatter.memoDateFormatter)
     }
 }
+
+
