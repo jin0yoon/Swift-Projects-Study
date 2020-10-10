@@ -15,7 +15,7 @@ class KeyboardObserver: ObservableObject{
         let height: CGFloat
         
         //키보드가 숨겨진 상태의 기본값을 타입 프로퍼티로 저장
-        static let hide = Self(animationDuration: 0.25, height: 0.0)
+        static let hide = Self(animationDuration: 0.25, height: 0)
     }
     
     //binding에 사용하는 속성 선언
@@ -23,7 +23,7 @@ class KeyboardObserver: ObservableObject{
     @Published var context = Context.hide
     
     //메모리 관리에 사용되는 속성 선언
-    private var cancellabled = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     //생성자 선언
     init() {
@@ -45,12 +45,12 @@ class KeyboardObserver: ObservableObject{
             //변환된 context instance를 context 속성에 bind
             .assign(to: \.context, on: self)
             //메모리 처리에 필요한 코드
-            .store(in: &cancellabled)
+            .store(in: &cancellables)
     }
     
     func parse(notification: Notification) -> Context?{
         //keyboard 높이를 꺼내야 함
-        guard let userInfo = notification.userInfo else { return nil}
+        guard let userInfo = notification.userInfo else { return nil }
         
         let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
         
@@ -58,13 +58,13 @@ class KeyboardObserver: ObservableObject{
         
         
         //높이를 저장할 변수를 선언하고 0으로 초기화
-        var height: CGFloat = 0.0
+        var height: CGFloat = 0
         
         if let value = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue{
             let frame = value.cgRectValue
             
             if frame.origin.y < UIScreen.main.bounds.height {
-                height = frame.height - (safeAreaInsets?.bottom ?? 0.0)
+                height = frame.height - (safeAreaInsets?.bottom ?? 0)
             }
         }
         
