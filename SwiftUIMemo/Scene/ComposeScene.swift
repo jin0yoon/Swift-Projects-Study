@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIX
 
 struct ComposeScene: View {
     //MemoStor 속성을 선언
@@ -30,8 +31,8 @@ struct ComposeScene: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     //context 속성은 published 특성으로 선언했으므로
                     //속성에 저장된 값이 업데이트되면 padding도 함께 업데이트 됨
-                    .padding(.bottom, keyboard.context.height)
-                    .animation(.easeInOut(duration: keyboard.context.animationDuration))
+                    .padding(.keyboard)
+                    .animation(.easeInOut(duration: 0.3))
 //                    .background(Color.yellow)
                 //swiftUI에서는 view를 container 중앙에 배치함
             }
