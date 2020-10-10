@@ -15,6 +15,9 @@ struct ComposeScene: View {
     
     @Binding var showComposer: Bool
     
+    //keyboardObserver를 주입할 속성 선언
+    @EnvironmentObject var keyboard: KeyboardObserver
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -25,7 +28,11 @@ struct ComposeScene: View {
                 //반대로 content 속성에 문자열을 저장하면 textfield에도 동일한 문자열이 표시됨
                 TextView(text: $content)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.yellow)
+                    //context 속성은 published 특성으로 선언했으므로
+                    //속성에 저장된 값이 업데이트되면 padding도 함께 업데이트 됨
+                    .padding(.bottom, keyboard.context.height)
+                    .animation(.easeInOut(duration: keyboard.context.animationDuration))
+//                    .background(Color.yellow)
                 //swiftUI에서는 view를 container 중앙에 배치함
             }
             //.infinity -> 사용가능한 최대 크기
@@ -82,5 +89,6 @@ struct ComposeScene_Previews: PreviewProvider {
         ComposeScene(showComposer: .constant(false))
             //MemoStore를 커스텀 공유데이터로 등록
             .environmentObject(MemoStore())
+            .environmentObject(KeyboardObserver())
     }
 }
