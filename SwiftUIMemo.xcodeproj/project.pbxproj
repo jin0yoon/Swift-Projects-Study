@@ -17,6 +17,7 @@
 		452493C8252C34C300AAF843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452493C7252C34C300AAF843 /* Assets.xcassets */; };
 		452493CB252C34C300AAF843 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452493CA252C34C300AAF843 /* Preview Assets.xcassets */; };
 		452493CE252C34C300AAF843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452493CC252C34C300AAF843 /* LaunchScreen.storyboard */; };
+		45AA5D942531B7E900BFD479 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AA5D932531B7E900BFD479 /* TextView.swift */; };
 		45F5B535252EFFCD00DAB2A3 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5B534252EFFCD00DAB2A3 /* Memo.swift */; };
 		45F5B539252F024000DAB2A3 /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F5B538252F024000DAB2A3 /* MemoStore.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		452493CA252C34C300AAF843 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		452493CD252C34C300AAF843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		452493CF252C34C300AAF843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45AA5D932531B7E900BFD479 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		45F5B534252EFFCD00DAB2A3 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		45F5B538252F024000DAB2A3 /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				4509B7DA2530682D006C3A0C /* MemoCell.swift */,
+				45AA5D932531B7E900BFD479 /* TextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				452493C1252C34C000AAF843 /* SceneDelegate.swift in Sources */,
 				452493C3252C34C000AAF843 /* MemoListScene.swift in Sources */,
 				45F5B535252EFFCD00DAB2A3 /* Memo.swift in Sources */,
+				45AA5D942531B7E900BFD479 /* TextView.swift in Sources */,
 				4509B7DB2530682D006C3A0C /* MemoCell.swift in Sources */,
 				4509B7E125306966006C3A0C /* ComposeScene.swift in Sources */,
 			);

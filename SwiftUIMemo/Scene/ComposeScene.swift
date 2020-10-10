@@ -23,7 +23,8 @@ struct ComposeScene: View {
                 //이렇게 하면 content속성과 textfield가 바인딩되고
                 //textfield에 문자를 입력하면 content속성에 자동으로 저장
                 //반대로 content 속성에 문자열을 저장하면 textfield에도 동일한 문자열이 표시됨
-                TextField("", text: $content)
+                TextView(text: $content)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.yellow)
                 //swiftUI에서는 view를 container 중앙에 배치함
             }
