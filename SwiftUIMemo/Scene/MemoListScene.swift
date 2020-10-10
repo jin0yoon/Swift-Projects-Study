@@ -52,6 +52,7 @@ struct MemoListScene: View {
             //content 클로저가 실행되고 return된 화면을 modal 방식으로 표시함
             .sheet(isPresented: $showComposer, content: {
                 ComposeScene(showComposer: self.$showComposer)
+                    .environmentObject(self.store)
             })
         }
         
