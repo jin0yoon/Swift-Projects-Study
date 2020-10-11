@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		45C6484C2532E1FB005AFEF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6484B2532E1FB005AFEF1 /* AppDelegate.swift */; };
 		45C6484E2532E1FB005AFEF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6484D2532E1FB005AFEF1 /* SceneDelegate.swift */; };
-		45C648502532E1FB005AFEF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6484F2532E1FB005AFEF1 /* ContentView.swift */; };
+		45C648502532E1FB005AFEF1 /* TabbedRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6484F2532E1FB005AFEF1 /* TabbedRootView.swift */; };
 		45C648532532E1FB005AFEF1 /* recipeat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45C648512532E1FB005AFEF1 /* recipeat.xcdatamodeld */; };
 		45C648552532E1FB005AFEF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C648542532E1FB005AFEF1 /* Assets.xcassets */; };
 		45C648582532E1FB005AFEF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C648572532E1FB005AFEF1 /* Preview Assets.xcassets */; };
 		45C6485B2532E1FB005AFEF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C648592532E1FB005AFEF1 /* LaunchScreen.storyboard */; };
 		45C648662532E1FB005AFEF1 /* recipeatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648652532E1FB005AFEF1 /* recipeatTests.swift */; };
 		45C648712532E1FB005AFEF1 /* recipeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648702532E1FB005AFEF1 /* recipeatUITests.swift */; };
+		45C648822532E5EA005AFEF1 /* Structs_Enums_Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */; };
+		45C6488A2532E6CA005AFEF1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648892532E6CA005AFEF1 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		45C648482532E1FB005AFEF1 /* recipeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recipeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C6484B2532E1FB005AFEF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45C6484D2532E1FB005AFEF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45C6484F2532E1FB005AFEF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		45C6484F2532E1FB005AFEF1 /* TabbedRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedRootView.swift; sourceTree = "<group>"; };
 		45C648522532E1FB005AFEF1 /* recipeat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = recipeat.xcdatamodel; sourceTree = "<group>"; };
 		45C648542532E1FB005AFEF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C648572532E1FB005AFEF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		45C6486C2532E1FB005AFEF1 /* recipeatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = recipeatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C648702532E1FB005AFEF1 /* recipeatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeatUITests.swift; sourceTree = "<group>"; };
 		45C648722532E1FB005AFEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs_Enums_Classes.swift; sourceTree = "<group>"; };
+		45C648892532E6CA005AFEF1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		45C6483F2532E1FA005AFEF1 = {
 			isa = PBXGroup;
 			children = (
+				45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */,
 				45C6484A2532E1FB005AFEF1 /* recipeat */,
 				45C648642532E1FB005AFEF1 /* recipeatTests */,
 				45C6486F2532E1FB005AFEF1 /* recipeatUITests */,
@@ -103,12 +108,13 @@
 			children = (
 				45C6484B2532E1FB005AFEF1 /* AppDelegate.swift */,
 				45C6484D2532E1FB005AFEF1 /* SceneDelegate.swift */,
-				45C6484F2532E1FB005AFEF1 /* ContentView.swift */,
+				45C6484F2532E1FB005AFEF1 /* TabbedRootView.swift */,
 				45C648542532E1FB005AFEF1 /* Assets.xcassets */,
 				45C648592532E1FB005AFEF1 /* LaunchScreen.storyboard */,
 				45C6485C2532E1FB005AFEF1 /* Info.plist */,
 				45C648512532E1FB005AFEF1 /* recipeat.xcdatamodeld */,
 				45C648562532E1FB005AFEF1 /* Preview Content */,
+				45C648892532E6CA005AFEF1 /* HomeView.swift */,
 			);
 			path = recipeat;
 			sourceTree = "<group>";
@@ -272,7 +278,9 @@
 				45C6484C2532E1FB005AFEF1 /* AppDelegate.swift in Sources */,
 				45C6484E2532E1FB005AFEF1 /* SceneDelegate.swift in Sources */,
 				45C648532532E1FB005AFEF1 /* recipeat.xcdatamodeld in Sources */,
-				45C648502532E1FB005AFEF1 /* ContentView.swift in Sources */,
+				45C6488A2532E6CA005AFEF1 /* HomeView.swift in Sources */,
+				45C648822532E5EA005AFEF1 /* Structs_Enums_Classes.swift in Sources */,
+				45C648502532E1FB005AFEF1 /* TabbedRootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
