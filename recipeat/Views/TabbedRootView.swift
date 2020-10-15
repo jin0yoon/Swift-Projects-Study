@@ -14,8 +14,7 @@ struct TabbedRootView: View {
     var body: some View {
         
         TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
+            HomeView()
                 .tabItem {
                     VStack{
                         Image(systemName: "house")
@@ -23,8 +22,7 @@ struct TabbedRootView: View {
                     }
                 }.tag(0)
             
-            Text("Second View")
-                .font(.title)
+            SearchView()
                 .tabItem {
                     VStack{
                         Image(systemName: "magnifyingglass")
@@ -32,8 +30,7 @@ struct TabbedRootView: View {
                     }
                 }.tag(1)
             
-            Text("Third View")
-                .font(.title)
+            MeView()
                 .tabItem {
                     VStack{
                         Image(systemName: "person.circle")
