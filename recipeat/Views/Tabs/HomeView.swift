@@ -18,13 +18,16 @@ struct HomeView: View {
         VStack{
             ScrollView(.horizontal, showsIndicators:false){
                 HStack{
-                    Text("This is scrollable to the right and left")
-                    Text("This is scrollable to the right and left")
+                    Spacer().frame(width:10)
+                    ForEach(0..<10){_ in
+                        StoryCircleView()
+                    }
+                    Spacer().frame(width:10)
                 }.frame(height: 80)
-            }.background(Color.red)
+            }.background(Color.clear)
             ScrollView{
-                ForEach(0..<50){_ in
-                    Text("This is scrollable, up and down")
+                ForEach(0..<10){_ in
+                    PostView()
                 }
                 
                 

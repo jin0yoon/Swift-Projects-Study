@@ -21,6 +21,7 @@
 		45C648712532E1FB005AFEF1 /* recipeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648702532E1FB005AFEF1 /* recipeatUITests.swift */; };
 		45C648822532E5EA005AFEF1 /* Structs_Enums_Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */; };
 		45C6488A2532E6CA005AFEF1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648892532E6CA005AFEF1 /* HomeView.swift */; };
+		45F9410D2539A4C1000D4AE0 /* StoryCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F9410C2539A4C1000D4AE0 /* StoryCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		45C648722532E1FB005AFEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs_Enums_Classes.swift; sourceTree = "<group>"; };
 		45C648892532E6CA005AFEF1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		45F9410C2539A4C1000D4AE0 /* StoryCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,6 @@
 		45024C692532EC9A00D619C5 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				45345E322538497800413AEB /* ReusableViews */,
 				45C648892532E6CA005AFEF1 /* HomeView.swift */,
 				45024C5C2532EC8000D619C5 /* SearchView.swift */,
 				45024C642532EC9100D619C5 /* MeView.swift */,
@@ -103,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				45C6484F2532E1FB005AFEF1 /* TabbedRootView.swift */,
+				45345E322538497800413AEB /* ReusableViews */,
 				45024C692532EC9A00D619C5 /* Tabs */,
 			);
 			path = Views;
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				45345E332538499700413AEB /* PostView.swift */,
+				45F9410C2539A4C1000D4AE0 /* StoryCircleView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			files = (
 				45C6484C2532E1FB005AFEF1 /* AppDelegate.swift in Sources */,
 				45C6484E2532E1FB005AFEF1 /* SceneDelegate.swift in Sources */,
+				45F9410D2539A4C1000D4AE0 /* StoryCircleView.swift in Sources */,
 				45C648532532E1FB005AFEF1 /* recipeat.xcdatamodeld in Sources */,
 				45024C5D2532EC8000D619C5 /* SearchView.swift in Sources */,
 				45024C652532EC9100D619C5 /* MeView.swift in Sources */,
