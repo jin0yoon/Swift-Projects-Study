@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct PostView: View {
+    
+    var passed_postingUser: String
+    var passed_description: String
+    var passed_numberOfLikes: Int
+    var passed_image: Image
+    
     var body: some View {
         
         VStack{
-            Image(systemName: "heart")
+            passed_image
                 .frame(height: 300)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .background(Color.init(red: 0.95, green: 0.95, blue: 0.95).opacity(0.6))
@@ -24,23 +30,26 @@ struct PostView: View {
                 }
                 
                 HStack{
-                    Text("poster")
+                    Text("\(passed_postingUser)")
+                    Text("\(passed_numberOfLikes) likes")
+                        .foregroundColor(.gray)
                     Spacer()
                 }.font(.system(size: 12, weight: .bold))
                 HStack{
-                    Text("description")
+                    Text("\(passed_description)")
                     Spacer()
                 }.font(.system(size: 12, weight: .regular))
             }.padding()
-            .background(Color.orange)
+//            .background(Color.orange)
             
             
-        }.background(Color.yellow)
+        }
+//        .background(Color.yellow)
     }
 }
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(passed_postingUser: "chris", passed_description: "this is a description for this post.this is a description for this post.this is a description for this post.this is a description for this post.this is a description for this post.", passed_numberOfLikes: 1000, passed_image: Image(systemName: "heart.fill"))
     }
 }
