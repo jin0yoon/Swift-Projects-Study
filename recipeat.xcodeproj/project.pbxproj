@@ -10,6 +10,7 @@
 		45024C5D2532EC8000D619C5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45024C5C2532EC8000D619C5 /* SearchView.swift */; };
 		45024C652532EC9100D619C5 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45024C642532EC9100D619C5 /* MeView.swift */; };
 		45345E342538499700413AEB /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45345E332538499700413AEB /* PostView.swift */; };
+		457653C4253C1532009DCD5C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457653C3253C1532009DCD5C /* LoginView.swift */; };
 		45C6484C2532E1FB005AFEF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6484B2532E1FB005AFEF1 /* AppDelegate.swift */; };
 		45C6484E2532E1FB005AFEF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6484D2532E1FB005AFEF1 /* SceneDelegate.swift */; };
 		45C648502532E1FB005AFEF1 /* TabbedRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6484F2532E1FB005AFEF1 /* TabbedRootView.swift */; };
@@ -22,6 +23,7 @@
 		45C648822532E5EA005AFEF1 /* Structs_Enums_Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */; };
 		45C6488A2532E6CA005AFEF1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648892532E6CA005AFEF1 /* HomeView.swift */; };
 		45F9410D2539A4C1000D4AE0 /* StoryCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F9410C2539A4C1000D4AE0 /* StoryCircleView.swift */; };
+		45FCC32D253C7B1B006E47CC /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCC32C253C7B1B006E47CC /* SignUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		45024C5C2532EC8000D619C5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		45024C642532EC9100D619C5 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		45345E332538499700413AEB /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		457653C3253C1532009DCD5C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		45C648482532E1FB005AFEF1 /* recipeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recipeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C6484B2532E1FB005AFEF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45C6484D2532E1FB005AFEF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs_Enums_Classes.swift; sourceTree = "<group>"; };
 		45C648892532E6CA005AFEF1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		45F9410C2539A4C1000D4AE0 /* StoryCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCircleView.swift; sourceTree = "<group>"; };
+		45FCC32C253C7B1B006E47CC /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				45C6484F2532E1FB005AFEF1 /* TabbedRootView.swift */,
+				457653C3253C1532009DCD5C /* LoginView.swift */,
+				45FCC32C253C7B1B006E47CC /* SignUp.swift */,
 				45345E322538497800413AEB /* ReusableViews */,
 				45024C692532EC9A00D619C5 /* Tabs */,
 			);
@@ -312,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C6484C2532E1FB005AFEF1 /* AppDelegate.swift in Sources */,
+				45FCC32D253C7B1B006E47CC /* SignUp.swift in Sources */,
 				45C6484E2532E1FB005AFEF1 /* SceneDelegate.swift in Sources */,
 				45F9410D2539A4C1000D4AE0 /* StoryCircleView.swift in Sources */,
 				45C648532532E1FB005AFEF1 /* recipeat.xcdatamodeld in Sources */,
@@ -319,6 +326,7 @@
 				45024C652532EC9100D619C5 /* MeView.swift in Sources */,
 				45C6488A2532E6CA005AFEF1 /* HomeView.swift in Sources */,
 				45C648822532E5EA005AFEF1 /* Structs_Enums_Classes.swift in Sources */,
+				457653C4253C1532009DCD5C /* LoginView.swift in Sources */,
 				45345E342538499700413AEB /* PostView.swift in Sources */,
 				45C648502532E1FB005AFEF1 /* TabbedRootView.swift in Sources */,
 			);
