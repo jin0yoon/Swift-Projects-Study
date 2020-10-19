@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C776B9BD1AA709780959D50 /* Pods_recipeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F723553BB3D712378831CDD /* Pods_recipeat.framework */; };
-		4043478940F862845F4051A0 /* Pods_recipeatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857773772DD95C526DB0E9B9 /* Pods_recipeatTests.framework */; };
 		45024C5D2532EC8000D619C5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45024C5C2532EC8000D619C5 /* SearchView.swift */; };
 		45024C652532EC9100D619C5 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45024C642532EC9100D619C5 /* MeView.swift */; };
 		45345E342538499700413AEB /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45345E332538499700413AEB /* PostView.swift */; };
@@ -24,10 +22,8 @@
 		45C648712532E1FB005AFEF1 /* recipeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648702532E1FB005AFEF1 /* recipeatUITests.swift */; };
 		45C648822532E5EA005AFEF1 /* Structs_Enums_Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */; };
 		45C6488A2532E6CA005AFEF1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C648892532E6CA005AFEF1 /* HomeView.swift */; };
-		45E916B6253D519F00B8234F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45E916B5253D519F00B8234F /* GoogleService-Info.plist */; };
 		45F9410D2539A4C1000D4AE0 /* StoryCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F9410C2539A4C1000D4AE0 /* StoryCircleView.swift */; };
 		45FCC32D253C7B1B006E47CC /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FCC32C253C7B1B006E47CC /* SignUp.swift */; };
-		CFA0A63E5196581F3364865F /* Pods_recipeat_recipeatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5251B01FCBBFA1E3C6CEB1 /* Pods_recipeat_recipeatUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,18 +65,8 @@
 		45C648722532E1FB005AFEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45C648812532E5EA005AFEF1 /* Structs_Enums_Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs_Enums_Classes.swift; sourceTree = "<group>"; };
 		45C648892532E6CA005AFEF1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		45E916B5253D519F00B8234F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45F9410C2539A4C1000D4AE0 /* StoryCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCircleView.swift; sourceTree = "<group>"; };
 		45FCC32C253C7B1B006E47CC /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		46C291889833A4D493680CC2 /* Pods-recipeatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeatTests.debug.xcconfig"; path = "Target Support Files/Pods-recipeatTests/Pods-recipeatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5651357C838D9C0196758586 /* Pods-recipeat-recipeatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeat-recipeatUITests.release.xcconfig"; path = "Target Support Files/Pods-recipeat-recipeatUITests/Pods-recipeat-recipeatUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6124203539ECEBA44079257C /* Pods-recipeat-recipeatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeat-recipeatUITests.debug.xcconfig"; path = "Target Support Files/Pods-recipeat-recipeatUITests/Pods-recipeat-recipeatUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7DF7D27BD260BB7F38805368 /* Pods-recipeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeat.release.xcconfig"; path = "Target Support Files/Pods-recipeat/Pods-recipeat.release.xcconfig"; sourceTree = "<group>"; };
-		7F723553BB3D712378831CDD /* Pods_recipeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		857773772DD95C526DB0E9B9 /* Pods_recipeatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE5D6681928A0259E54EF90C /* Pods-recipeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeat.debug.xcconfig"; path = "Target Support Files/Pods-recipeat/Pods-recipeat.debug.xcconfig"; sourceTree = "<group>"; };
-		BB5251B01FCBBFA1E3C6CEB1 /* Pods_recipeat_recipeatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeat_recipeatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA0D837BA234C0019486B7EC /* Pods-recipeatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeatTests.release.xcconfig"; path = "Target Support Files/Pods-recipeatTests/Pods-recipeatTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C776B9BD1AA709780959D50 /* Pods_recipeat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4043478940F862845F4051A0 /* Pods_recipeatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,27 +88,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA0A63E5196581F3364865F /* Pods_recipeat_recipeatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03B450775309CB0633B5F40B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AE5D6681928A0259E54EF90C /* Pods-recipeat.debug.xcconfig */,
-				7DF7D27BD260BB7F38805368 /* Pods-recipeat.release.xcconfig */,
-				6124203539ECEBA44079257C /* Pods-recipeat-recipeatUITests.debug.xcconfig */,
-				5651357C838D9C0196758586 /* Pods-recipeat-recipeatUITests.release.xcconfig */,
-				46C291889833A4D493680CC2 /* Pods-recipeatTests.debug.xcconfig */,
-				EA0D837BA234C0019486B7EC /* Pods-recipeatTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		45024C692532EC9A00D619C5 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +132,6 @@
 				45C648642532E1FB005AFEF1 /* recipeatTests */,
 				45C6486F2532E1FB005AFEF1 /* recipeatUITests */,
 				45C648492532E1FB005AFEF1 /* Products */,
-				03B450775309CB0633B5F40B /* Pods */,
-				4F368420DD2EAC3189A67D3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,7 +154,6 @@
 				45024C6D2532ECDA00D619C5 /* Views */,
 				45C648542532E1FB005AFEF1 /* Assets.xcassets */,
 				45C648592532E1FB005AFEF1 /* LaunchScreen.storyboard */,
-				45E916B5253D519F00B8234F /* GoogleService-Info.plist */,
 				45C6485C2532E1FB005AFEF1 /* Info.plist */,
 				45C648512532E1FB005AFEF1 /* recipeat.xcdatamodeld */,
 				45C648562532E1FB005AFEF1 /* Preview Content */,
@@ -219,16 +185,6 @@
 				45C648722532E1FB005AFEF1 /* Info.plist */,
 			);
 			path = recipeatUITests;
-			sourceTree = "<group>";
-		};
-		4F368420DD2EAC3189A67D3E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7F723553BB3D712378831CDD /* Pods_recipeat.framework */,
-				BB5251B01FCBBFA1E3C6CEB1 /* Pods_recipeat_recipeatUITests.framework */,
-				857773772DD95C526DB0E9B9 /* Pods_recipeatTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,7 +296,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45C6485B2532E1FB005AFEF1 /* LaunchScreen.storyboard in Resources */,
-				45E916B6253D519F00B8234F /* GoogleService-Info.plist in Resources */,
 				45C648582532E1FB005AFEF1 /* Preview Assets.xcassets in Resources */,
 				45C648552532E1FB005AFEF1 /* Assets.xcassets in Resources */,
 			);
@@ -646,7 +601,6 @@
 		};
 		45C648762532E1FB005AFEF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE5D6681928A0259E54EF90C /* Pods-recipeat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -667,7 +621,6 @@
 		};
 		45C648772532E1FB005AFEF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DF7D27BD260BB7F38805368 /* Pods-recipeat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -688,7 +641,6 @@
 		};
 		45C648792532E1FB005AFEF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46C291889833A4D493680CC2 /* Pods-recipeatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -710,7 +662,6 @@
 		};
 		45C6487A2532E1FB005AFEF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA0D837BA234C0019486B7EC /* Pods-recipeatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -732,7 +683,6 @@
 		};
 		45C6487C2532E1FB005AFEF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6124203539ECEBA44079257C /* Pods-recipeat-recipeatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -752,7 +702,6 @@
 		};
 		45C6487D2532E1FB005AFEF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5651357C838D9C0196758586 /* Pods-recipeat-recipeatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
