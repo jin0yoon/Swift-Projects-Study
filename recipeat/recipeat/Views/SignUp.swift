@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignUp: View {
     
@@ -13,6 +14,8 @@ struct SignUp: View {
     @State private var username:String = ""
     @State private var password:String = ""
     @State private var email:String = ""
+    
+    @State private var docRef:DocumentReference!
     
     var body: some View {
         ZStack {
@@ -58,6 +61,24 @@ struct SignUp: View {
                 Spacer().frame(height:50)
                 
                 Button(action: {
+                    let dataToSave:[String:Any] = [
+                        "username":self.username,
+                        "password":self.password,
+                        "name":self.name,
+                        "email":self.email
+                    ]
+                    print("setting ref")
+                    self.docRef = Firestore.firestore().document("users/\(UUID().uuidString)")
+                    
+                    print("setting data")
+                    self.docRef.setData(dataToSave){ (error) in
+                        if let error = error{
+                            print("error = \(error)")
+                        }else{
+                            print("no error")
+                        }
+                    }
+                    
                     print("here")
                 }) {
                     HStack{
