@@ -23,6 +23,7 @@
 		4581387D253D66CF00745975 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813874253D66CF00745975 /* SignUp.swift */; };
 		4581387E253D66CF00745975 /* StoryCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813876253D66CF00745975 /* StoryCircleView.swift */; };
 		4581387F253D66CF00745975 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813877253D66CF00745975 /* PostView.swift */; };
+		45813884253D670600745975 /* Structs_Enums_Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813883253D670600745975 /* Structs_Enums_Classes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		45813874253D66CF00745975 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		45813876253D66CF00745975 /* StoryCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCircleView.swift; sourceTree = "<group>"; };
 		45813877253D66CF00745975 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		45813883253D670600745975 /* Structs_Enums_Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs_Enums_Classes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				45813834253D65E800745975 /* AppDelegate.swift */,
 				45813836253D65E800745975 /* SceneDelegate.swift */,
+				45813883253D670600745975 /* Structs_Enums_Classes.swift */,
 				4581386D253D66CF00745975 /* Views */,
 				4581383D253D65EA00745975 /* Assets.xcassets */,
 				45813842253D65EA00745975 /* LaunchScreen.storyboard */,
@@ -168,8 +171,8 @@
 		4581386E253D66CF00745975 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				4581386F253D66CF00745975 /* SearchView.swift */,
 				45813870253D66CF00745975 /* HomeView.swift */,
+				4581386F253D66CF00745975 /* SearchView.swift */,
 				45813871253D66CF00745975 /* MeView.swift */,
 			);
 			path = Tabs;
@@ -316,6 +319,7 @@
 			files = (
 				4581387C253D66CF00745975 /* TabbedRootView.swift in Sources */,
 				4581387A253D66CF00745975 /* MeView.swift in Sources */,
+				45813884253D670600745975 /* Structs_Enums_Classes.swift in Sources */,
 				4581387E253D66CF00745975 /* StoryCircleView.swift in Sources */,
 				4581387B253D66CF00745975 /* LoginView.swift in Sources */,
 				45813878253D66CF00745975 /* SearchView.swift in Sources */,
