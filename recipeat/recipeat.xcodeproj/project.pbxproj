@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -227,7 +227,6 @@
 				C55E817B40441A2B472F1EC7 /* Pods-recipeatTests.debug.xcconfig */,
 				820964AA0382FF52A4D99426 /* Pods-recipeatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -652,8 +651,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"recipeat/Preview Content\"";
+				DEVELOPMENT_TEAM = GUHPQDWLGB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = recipeat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -673,8 +674,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"recipeat/Preview Content\"";
+				DEVELOPMENT_TEAM = GUHPQDWLGB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = recipeat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
