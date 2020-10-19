@@ -15,6 +15,14 @@
 		45813844253D65EA00745975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45813842253D65EA00745975 /* LaunchScreen.storyboard */; };
 		4581384F253D65EA00745975 /* recipeatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581384E253D65EA00745975 /* recipeatTests.swift */; };
 		4581385A253D65EA00745975 /* recipeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813859253D65EA00745975 /* recipeatUITests.swift */; };
+		45813878253D66CF00745975 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581386F253D66CF00745975 /* SearchView.swift */; };
+		45813879253D66CF00745975 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813870253D66CF00745975 /* HomeView.swift */; };
+		4581387A253D66CF00745975 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813871253D66CF00745975 /* MeView.swift */; };
+		4581387B253D66CF00745975 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813872253D66CF00745975 /* LoginView.swift */; };
+		4581387C253D66CF00745975 /* TabbedRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813873253D66CF00745975 /* TabbedRootView.swift */; };
+		4581387D253D66CF00745975 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813874253D66CF00745975 /* SignUp.swift */; };
+		4581387E253D66CF00745975 /* StoryCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813876253D66CF00745975 /* StoryCircleView.swift */; };
+		4581387F253D66CF00745975 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813877253D66CF00745975 /* PostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		45813855253D65EA00745975 /* recipeatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = recipeatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45813859253D65EA00745975 /* recipeatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeatUITests.swift; sourceTree = "<group>"; };
 		4581385B253D65EA00745975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4581386F253D66CF00745975 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		45813870253D66CF00745975 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		45813871253D66CF00745975 /* MeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		45813872253D66CF00745975 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		45813873253D66CF00745975 /* TabbedRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbedRootView.swift; sourceTree = "<group>"; };
+		45813874253D66CF00745975 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		45813876253D66CF00745975 /* StoryCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCircleView.swift; sourceTree = "<group>"; };
+		45813877253D66CF00745975 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 			children = (
 				45813834253D65E800745975 /* AppDelegate.swift */,
 				45813836253D65E800745975 /* SceneDelegate.swift */,
+				4581386D253D66CF00745975 /* Views */,
 				4581383D253D65EA00745975 /* Assets.xcassets */,
 				45813842253D65EA00745975 /* LaunchScreen.storyboard */,
 				45813845253D65EA00745975 /* Info.plist */,
@@ -134,6 +151,37 @@
 				4581385B253D65EA00745975 /* Info.plist */,
 			);
 			path = recipeatUITests;
+			sourceTree = "<group>";
+		};
+		4581386D253D66CF00745975 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4581386E253D66CF00745975 /* Tabs */,
+				45813872253D66CF00745975 /* LoginView.swift */,
+				45813873253D66CF00745975 /* TabbedRootView.swift */,
+				45813874253D66CF00745975 /* SignUp.swift */,
+				45813875253D66CF00745975 /* ReusableViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4581386E253D66CF00745975 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				4581386F253D66CF00745975 /* SearchView.swift */,
+				45813870253D66CF00745975 /* HomeView.swift */,
+				45813871253D66CF00745975 /* MeView.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		45813875253D66CF00745975 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				45813876253D66CF00745975 /* StoryCircleView.swift */,
+				45813877253D66CF00745975 /* PostView.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +314,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4581387C253D66CF00745975 /* TabbedRootView.swift in Sources */,
+				4581387A253D66CF00745975 /* MeView.swift in Sources */,
+				4581387E253D66CF00745975 /* StoryCircleView.swift in Sources */,
+				4581387B253D66CF00745975 /* LoginView.swift in Sources */,
+				45813878253D66CF00745975 /* SearchView.swift in Sources */,
 				45813835253D65E800745975 /* AppDelegate.swift in Sources */,
 				45813837253D65E800745975 /* SceneDelegate.swift in Sources */,
+				45813879253D66CF00745975 /* HomeView.swift in Sources */,
+				4581387D253D66CF00745975 /* SignUp.swift in Sources */,
 				4581383C253D65E800745975 /* recipeat.xcdatamodeld in Sources */,
+				4581387F253D66CF00745975 /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
