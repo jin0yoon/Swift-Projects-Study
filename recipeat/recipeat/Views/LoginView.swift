@@ -11,6 +11,7 @@ import SPAlert
 
 struct LoginView: View {
     
+    
     @State private var signUp_visible = false
     
     @State private var username: String = ""
@@ -30,6 +31,19 @@ struct LoginView: View {
                         .frame(width: UIScreen.main.bounds.size.width/2)
                     
                     TextField("Username", text: $username)
+                        .autocapitalization(.none)
+                        .padding()
+                        .background(Color.clear)
+                        .frame(height: 50)
+                        .overlay(
+                            Capsule()
+                                .stroke(lineWidth: 2)
+                                .foregroundColor(.white))
+                        .padding()
+                        .foregroundColor(.white)
+                    
+                    SecureField("Password", text: $password)
+                        .autocapitalization(.none)
                         .padding()
                         .background(Color.clear)
                         .frame(height: 50)
@@ -39,47 +53,52 @@ struct LoginView: View {
                                 .foregroundColor(.white))
                         .padding()
                     
-                    TextField("Password", text: $password)
-                        .padding()
-                        .background(Color.clear)
-                        .frame(height: 50)
-                        .overlay(
-                            Capsule()
-                                .stroke(lineWidth: 2)
-                                .foregroundColor(.white))
-                        .padding()
-                    
-                    
-                    
-                    Button(action: {
-                        Firestore.firestore().collection("users").whereField("username", isEqualTo: self.username).getDocuments(){ (querySnapshot, err) in
-                            
-                            if let err = err{
-                                print("Error getting documents: \(err)")
-                            }else{
-                                if querySnapshot!.documents.count <= 0{
-                                    let alertView = SPAlertView(title: "No users found", message: "No users have the username you entered", preset: SPAlertPreset.error)
-                                    alertView.duration = 3
-                                    alertView.present()
+                    NavigationLink(
+                        destination: TabbedRootView(),
+                        isActive: $isLoggedIn){
+                        
+                        Button(action: {
+                            Firestore.firestore().collection("users").whereField("username", isEqualTo: self.username).getDocuments(){ (querySnapshot, err) in
+                                
+                                if let err = err{
+                                    print("Error getting documents: \(err)")
                                 }else{
-                                    let alertView = SPAlertView(title: "\(querySnapshot!.documents.count) users found", message: "Your login query came back positive", preset: SPAlertPreset.done)
-                                    alertView.duration = 3
-                                    alertView.present()
-                                }
-                                for document in querySnapshot!.documents {
-                                    print("\(document.documentID) => \(document.data())")
+                                    if querySnapshot!.documents.count <= 0{
+                                        let alertView = SPAlertView(title: "No users found", message: "No users have the username you entered", preset: SPAlertPreset.error)
+                                        alertView.duration = 3
+                                        alertView.present()
+                                    }else if querySnapshot!.documents.count > 1{
+                                        let alertView = SPAlertView(title: "Something went wrong", message: "Multiple accounts exist with this username", preset: SPAlertPreset.error)
+                                        alertView.duration = 3
+                                        alertView.present()
+                                    }else {
+                                        
+                                        for document in querySnapshot!.documents {
+                                            print("\(document.documentID) => \(document.data())")
+                                            if document.data()["password"] as? String ?? "" == (self.password){
+                                                
+                                                isLoggedIn = true
+                                            }else{
+                                                let alertView = SPAlertView(title: "password doesn't match", message: nil, preset: SPAlertPreset.error)
+                                                alertView.duration = 3
+                                                alertView.present()
+                                            }
+                                        }
+                                    }
+                                    
                                 }
                             }
-                        }
-                    }, label: {
-                        HStack {
-                            Text("Login")
-                            Image(systemName: "arrow.right")
-                        }.frame(height: 50)
-                        .frame(minWidth:0, maxWidth: .infinity)
-                        
-                    }).background(lightBlue)
-                    .cornerRadius(25)
+                        }, label: {
+                            HStack {
+                                Text("Login")
+                                Image(systemName: "arrow.right")
+                            }.frame(height: 50)
+                            .frame(minWidth:0, maxWidth: .infinity)
+                            
+                        }).background(lightBlue).cornerRadius(25)
+                    }
+                    
+                    
                     
                     Spacer()
                     
