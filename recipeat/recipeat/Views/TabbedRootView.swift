@@ -11,13 +11,13 @@ struct TabbedRootView: View {
     
     @State private var selection = 0
     
-    
+    @EnvironmentObject var env: GlobalEnvironment
     
     var body: some View {
         ZStack{
             NavigationView {
                 Text("")
-            }.navigationBarTitle("title").navigationBarHidden(true)
+            }.navigationBarTitle("\(env.currentUser.username)").navigationBarHidden(true)
             
             TabView(selection: $selection){
                 HomeView()

@@ -10,7 +10,7 @@ import Firebase
 import SPAlert
 
 struct LoginView: View {
-    
+    @EnvironmentObject var env: GlobalEnvironment
     
     @State private var signUp_visible = false
     
@@ -76,7 +76,12 @@ struct LoginView: View {
                                         for document in querySnapshot!.documents {
                                             print("\(document.documentID) => \(document.data())")
                                             if document.data()["password"] as? String ?? "" == (self.password){
-                                                
+                                                self.env.currentUser = user(
+                                                    username: document.data()["username"] as? String ?? "",
+                                                    password: document.data()["password"] as? String ?? "",
+                                                    name: document.data()["name"] as? String ?? "",
+                                                    email: document.data()["email"] as? String ?? ""
+                                                )
                                                 isLoggedIn = true
                                             }else{
                                                 let alertView = SPAlertView(title: "password doesn't match", message: nil, preset: SPAlertPreset.error)
