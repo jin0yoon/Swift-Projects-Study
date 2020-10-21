@@ -11,33 +11,41 @@ struct TabbedRootView: View {
     
     @State private var selection = 0
     
+    
+    
     var body: some View {
-        
-        TabView(selection: $selection){
-            HomeView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
-                }.tag(0)
+        ZStack{
+            NavigationView {
+                Text("")
+            }.navigationBarTitle("title").navigationBarHidden(true)
             
-            SearchView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
-                }.tag(1)
-            
-            MeView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "person.circle")
-                        Text("Me")
-                    }
-                }.tag(2)
+            TabView(selection: $selection){
+                HomeView()
+                    .tabItem {
+                        VStack{
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
+                    }.tag(0)
+                
+                SearchView()
+                    .tabItem {
+                        VStack{
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
+                        }
+                    }.tag(1)
+                
+                MeView()
+                    .tabItem {
+                        VStack{
+                            Image(systemName: "person.circle")
+                            Text("Me")
+                        }
+                    }.tag(2)
+            }
         }
+        
     }
 }
 
