@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
+import SPAlert
 
 struct LoginView: View {
     
     @State private var signUp_visible = false
+    
+    @State private var username: String = ""
+    @State private var password: String = ""
     
     var body: some View {
         VStack(spacing:0){
@@ -22,17 +27,35 @@ struct LoginView: View {
                 .background(Color.blue)
                 .edgesIgnoringSafeArea(.top)
             
-            TextField("Username", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+            TextField("Username", text: $username)
                 .padding()
                 .background(Color.clear)
-            TextField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+            TextField("Password", text: $password)
                 .padding()
                 .background(Color.clear)
             
             Spacer().frame(height:20)
             
             Button(action: {
-                
+                Firestore.firestore().collection("users").whereField("username", isEqualTo: self.username).getDocuments(){ (querySnapshot, err) in
+                    
+                    if let err = err{
+                        print("Error getting documents: \(err)")
+                    }else{
+                        if querySnapshot!.documents.count <= 0{
+                            let alertView = SPAlertView(title: "No users found", message: "No users have the username you entered", preset: SPAlertPreset.error)
+                            alertView.duration = 3
+                            alertView.present()
+                        }else{
+                            let alertView = SPAlertView(title: "\(querySnapshot!.documents.count) users found", message: "Your login query came back positive", preset: SPAlertPreset.done)
+                            alertView.duration = 3
+                            alertView.present()
+                        }
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                        }
+                    }
+                }
             }, label: {
                 HStack {
                     Text("Login")
@@ -50,7 +73,7 @@ struct LoginView: View {
             }).background(Color.clear)
             .foregroundColor(Color.init(red: 0.8, green: 0.8, blue: 0.8))
             .sheet(isPresented: $signUp_visible, content: {
-                Text("this will be signup")
+                SignUp()
             })
             
             Spacer()
