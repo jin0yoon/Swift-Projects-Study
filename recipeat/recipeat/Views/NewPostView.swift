@@ -54,25 +54,34 @@ struct NewPostView: View {
                 VStack {
                     Text("Ingredients")
                     ScrollView{
-                        VStack{
-                            ForEach(ingredients, id: \.id){ thisIngredient in
-                                Text("\(thisIngredient.amount) \(thisIngredient.name)")
-                                
-                            }
-                        }.frame(width: UIScreen.main.bounds.size.width/2)
-                    }.clipped()
+                        HStack {
+                            VStack(alignment: .leading){
+                                ForEach(ingredients, id: \.id){ thisIngredient in
+                                    
+                                    Text("\(thisIngredient.amount) \(thisIngredient.name)")
+                                    
+                                }
+                            }.padding()
+                            Spacer()
+                        }
+                        
+                        
+                    }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
                 }.background(Color.yellow)
                 
                 VStack {
                     Text("Steps")
                     ScrollView{
-                        VStack{
-                            ForEach(steps, id: \.id){ thisStep in
-                                Text("\(thisStep.description)")
-                                
-                            }
-                        }.frame(width: UIScreen.main.bounds.size.width/2)
-                    }.clipped()
+                        HStack {
+                            VStack(alignment: .leading){
+                                ForEach(steps, id: \.id){ thisStep in
+                                    Text("\(thisStep.description)")
+                                    
+                                }
+                            }.padding()
+                            Spacer()
+                        }
+                    }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
                 }.background(Color.green)
                 
                 
