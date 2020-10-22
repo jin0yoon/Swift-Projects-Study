@@ -52,9 +52,11 @@ struct LoginView: View {
                         .overlay(
                             Capsule()
                                 .stroke(lineWidth: 2)
-                                .foregroundColor(.white))
+                                
+                        )
                         .padding()
                     
+                        
                     NavigationLink(
                         destination: TabbedRootView(),
                         isActive: $isLoggedIn){
@@ -102,7 +104,7 @@ struct LoginView: View {
                             }.frame(height: 50)
                             .frame(minWidth:0, maxWidth: .infinity)
                             
-                        }).background(lightBlue).cornerRadius(25)
+                        }).background(lightBlue).cornerRadius(25).padding()
                     }
                     
                     
@@ -122,7 +124,7 @@ struct LoginView: View {
                     })
                     
                     Spacer()
-                }.background(Color.clear)
+                }.background(Color.clear).foregroundColor(.white)
             }.navigationBarTitle("").navigationBarHidden(isHidden)
             .onAppear { self.isHidden = true }.navigationBarBackButtonHidden(true)
             
