@@ -9,6 +9,12 @@ import SwiftUI
 
 struct NewPostView: View {
     
+    @State var showSheet = false
+    @State var showImagePicker = false
+    @State var sourceType:UIImagePickerController.SourceType = .camera
+    @State private var image:UIImage?
+    
+    //Sample Data
     var steps: [Step] = [
         Step(description: "add eggs", orderNumber: 0),
         Step(description: "add eggs", orderNumber: 1),
@@ -42,13 +48,56 @@ struct NewPostView: View {
     
     var body: some View {
         VStack{
-            HStack{
-                Image(systemName: "timeLapse")
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                    .scaledToFit()
-                    .background(Color.blue)
+            ZStack{
+                HStack{
+                    if image != nil {
+                        Image(uiImage: image!)
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                            .scaledToFit()
+                            .background(Color.blue)
+                    } else {
+                        Image(systemName:"timelapse")
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                            .scaledToFit()
+                            .background(Color.blue)
+                    }
+                    
+                }
+                VStack{
+                    HStack{
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showSheet.toggle()
+                        }) {
+                            Image(systemName: "plus.circle")
+                                .font(.system(size:30))
+                                .foregroundColor(.black)
+                                .opacity(0.7)
+                                .padding()
+                        }.actionSheet(isPresented: $showSheet){
+                            ActionSheet(title: Text("Add a picture to your post"), message: nil, buttons: [
+                                .default(Text("Camera"), action: {
+                                    self.showImagePicker = true
+                                    self.sourceType = .camera
+                                }),
+                                .default(Text("Photo Library"), action: {
+                                    self.showImagePicker = true
+                                    self.sourceType = .photoLibrary
+                                }),
+                                .cancel()
+                            
+                            ])
+                        }
+                        
+                    }
+                    Spacer()
+                    
+                }
             }
+
             
             HStack{
                 VStack {
@@ -84,14 +133,63 @@ struct NewPostView: View {
                     }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
                 }.background(Color.green)
                 
-                
             }
+        }.sheet(isPresented: $showImagePicker){
+            imagePicker(image: self.$image, sourceType: self.sourceType)
         }
+        
     }
 }
 
 struct NewPostView_Previews: PreviewProvider {
     static var previews: some View {
         NewPostView()
+    }
+}
+
+
+//----------- imagePicker - UIViewControllerRepresentable
+
+
+struct imagePicker:UIViewControllerRepresentable {
+    @Binding var image: UIImage?
+    
+    typealias UIViewControllerType = UIImagePickerController
+    typealias Coordinator = imagePickerCoordinator
+    
+    var sourceType:UIImagePickerController.SourceType = .camera
+    
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<imagePicker>) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.sourceType = sourceType
+        picker.delegate = context.coordinator
+        return picker
+    }
+    
+    
+    func makeCoordinator() -> imagePicker.Coordinator {
+        return imagePickerCoordinator(image: $image)
+    }
+    
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<imagePicker>) {
+        
+    }
+    
+}
+
+
+//------------------ COORDINATOR
+class imagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    @Binding var image: UIImage?
+    init(image:Binding<UIImage?>) {
+        _image = image
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let uiimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = uiimage
+        }
     }
 }
