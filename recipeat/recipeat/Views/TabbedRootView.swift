@@ -13,11 +13,17 @@ struct TabbedRootView: View {
     
     @EnvironmentObject var env: GlobalEnvironment
     
+    @State var isHidden: Bool = false
+    
     var body: some View {
         ZStack{
             NavigationView {
                 Text("")
-            }.navigationBarTitle("\(env.currentUser.username)").navigationBarHidden(true)
+            }.navigationBarTitle("", displayMode: .inline)
+            .navigationBarHidden(isHidden)
+            .onAppear { self.isHidden = true }
+            .edgesIgnoringSafeArea([.top, .bottom])
+            .navigationBarBackButtonHidden(true)
             
             TabView(selection: $selection){
                 HomeView()
@@ -48,6 +54,7 @@ struct TabbedRootView: View {
         
     }
 }
+
 
 struct TabbedRootView_Previews: PreviewProvider {
     static var previews: some View {
