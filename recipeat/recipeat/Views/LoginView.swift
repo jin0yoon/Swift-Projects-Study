@@ -57,9 +57,7 @@ struct LoginView: View {
                         .padding()
                     
                         
-                    NavigationLink(
-                        destination: TabbedRootView(),
-                        isActive: $isLoggedIn){
+                    NavigationLink(destination: TabbedRootView(), isActive: $isLoggedIn){
                         
                         Button(action: {
                             Firestore.firestore().collection("users").whereField("username", isEqualTo: self.username).getDocuments(){ (querySnapshot, err) in
@@ -109,6 +107,21 @@ struct LoginView: View {
                             .frame(minWidth:0, maxWidth: .infinity)
                             
                         }).background(lightBlue).cornerRadius(25).padding()
+                    }.onAppear(){
+                        
+                        if let lastLogin_objects = UserDefaults.standard.object(forKey: "lastLogin_objects") as? Data{
+                            do{
+                                if let lastSession = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(lastLogin_objects) as? [String:Any?]{
+                                    
+                                    self.isLoggedIn = true
+                                    print("logged in successfully")
+                                }
+                            }catch{
+                                print("couldn't unwrap data/last session")
+                            }
+                        }else{
+                            print("couldn't unwrap data/lastLogin_objects")
+                        }
                     }
                     
                     
