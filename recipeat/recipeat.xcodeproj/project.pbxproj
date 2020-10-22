@@ -23,6 +23,7 @@
 		4581387F253D66CF00745975 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813877253D66CF00745975 /* PostView.swift */; };
 		45813884253D670600745975 /* Structs_Enums_Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813883253D670600745975 /* Structs_Enums_Classes.swift */; };
 		4581388F253D774C00745975 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4581388E253D774C00745975 /* GoogleService-Info.plist */; };
+		45D996AF25419D55005741FD /* HelperFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996AE25419D55005741FD /* HelperFuncs.swift */; };
 		D0ED4C7EE9A9DDCCC6E420A7 /* Pods_recipeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFAF51734EA9CE770498C9A /* Pods_recipeat.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		45813877253D66CF00745975 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		45813883253D670600745975 /* Structs_Enums_Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs_Enums_Classes.swift; sourceTree = "<group>"; };
 		4581388E253D774C00745975 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45D996AE25419D55005741FD /* HelperFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFuncs.swift; sourceTree = "<group>"; };
 		4A635FB6DB561A7DE29270FD /* Pods-recipeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeat.release.xcconfig"; path = "Target Support Files/Pods-recipeat/Pods-recipeat.release.xcconfig"; sourceTree = "<group>"; };
 		820964AA0382FF52A4D99426 /* Pods-recipeatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeatTests.release.xcconfig"; path = "Target Support Files/Pods-recipeatTests/Pods-recipeatTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DFAF51734EA9CE770498C9A /* Pods_recipeat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 				45813834253D65E800745975 /* AppDelegate.swift */,
 				45813836253D65E800745975 /* SceneDelegate.swift */,
 				45813883253D670600745975 /* Structs_Enums_Classes.swift */,
+				45D996AE25419D55005741FD /* HelperFuncs.swift */,
 				4581386D253D66CF00745975 /* Views */,
 				4581383D253D65EA00745975 /* Assets.xcassets */,
 				45813842253D65EA00745975 /* LaunchScreen.storyboard */,
@@ -307,6 +310,7 @@
 				4581387C253D66CF00745975 /* TabbedRootView.swift in Sources */,
 				4581387A253D66CF00745975 /* MeView.swift in Sources */,
 				45813884253D670600745975 /* Structs_Enums_Classes.swift in Sources */,
+				45D996AF25419D55005741FD /* HelperFuncs.swift in Sources */,
 				4581387E253D66CF00745975 /* StoryCircleView.swift in Sources */,
 				4581387B253D66CF00745975 /* LoginView.swift in Sources */,
 				45813878253D66CF00745975 /* SearchView.swift in Sources */,
