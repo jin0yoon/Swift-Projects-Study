@@ -28,26 +28,26 @@ struct TabbedRootView: View {
             TabView(selection: $selection){
                 HomeView()
                     .tabItem {
-                        VStack{
+                        
                             Image(systemName: "house")
                             Text("Home")
-                        }
+                        
                     }.tag(0)
                 
                 SearchView()
                     .tabItem {
-                        VStack{
+                        
                             Image(systemName: "magnifyingglass")
                             Text("Search")
-                        }
+                        
                     }.tag(1)
                 
                 MeView()
                     .tabItem {
-                        VStack{
+                        
                             Image(systemName: "person.circle")
                             Text("Me")
-                        }
+                        
                     }.tag(2)
             }
         }
