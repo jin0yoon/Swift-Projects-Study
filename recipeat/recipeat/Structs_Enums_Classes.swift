@@ -34,3 +34,23 @@ class GlobalEnvironment: ObservableObject{
 var lightBlue = Color.init(red: 91/255, green: 152/255, blue: 198/255)
 var darkBlue = Color.init(red: 47/255, green: 75/255, blue: 135/255)
 var vDarkBlue = Color.init(red: 2/255, green: 51/255, blue: 92/255)
+
+
+enum IngredientUnit {
+    case cup, tablespoon, teaspoon, pinch, dash, lb, kg, mg, g, mL, L, whole
+}
+
+struct Ingredient: Identifiable {
+    var id = UUID()
+    var name:String
+    var amount:Double
+    var amountUnit: IngredientUnit
+    var orderNumber:Int
+}
+
+
+struct Step: Identifiable {
+    var id = UUID()
+    var description:String
+    var orderNumber:Int
+}
