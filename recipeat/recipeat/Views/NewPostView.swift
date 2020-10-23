@@ -75,6 +75,7 @@ struct NewPostView: View {
                             Image(systemName: "plus.circle")
                                 .font(.system(size:30))
                                 .foregroundColor(.black)
+                                .background(Color.white)
                                 .opacity(0.7)
                                 .padding()
                         }.actionSheet(isPresented: $showSheet){
@@ -135,7 +136,20 @@ struct NewPostView: View {
                 
             }
         }.sheet(isPresented: $showImagePicker){
-            imagePicker(image: self.$image, sourceType: self.sourceType)
+            VStack{
+                ScrollView(.horizontal) {
+                    HStack{
+                        ForEach(0..<8){_ in
+                            Rectangle().frame(width:200, height: 200)
+                                .background(Color.red)
+                        }
+                    }.padding()
+                }.frame(height:240)
+                .background(Color.blue)
+                
+                imagePicker(image: self.$image, sourceType: self.sourceType)
+            }
+            
         }
         
     }
@@ -148,48 +162,4 @@ struct NewPostView_Previews: PreviewProvider {
 }
 
 
-//----------- imagePicker - UIViewControllerRepresentable
 
-
-struct imagePicker:UIViewControllerRepresentable {
-    @Binding var image: UIImage?
-    
-    typealias UIViewControllerType = UIImagePickerController
-    typealias Coordinator = imagePickerCoordinator
-    
-    var sourceType:UIImagePickerController.SourceType = .camera
-    
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<imagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.sourceType = sourceType
-        picker.delegate = context.coordinator
-        return picker
-    }
-    
-    
-    func makeCoordinator() -> imagePicker.Coordinator {
-        return imagePickerCoordinator(image: $image)
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<imagePicker>) {
-        
-    }
-    
-}
-
-
-//------------------ COORDINATOR
-class imagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    @Binding var image: UIImage?
-    init(image:Binding<UIImage?>) {
-        _image = image
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let uiimage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            image = uiimage
-        }
-    }
-}
