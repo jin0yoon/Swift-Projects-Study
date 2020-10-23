@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45696771254254A600663FB7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45696770254254A600663FB7 /* ImagePicker.swift */; };
 		45813835253D65E800745975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813834253D65E800745975 /* AppDelegate.swift */; };
 		45813837253D65E800745975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813836253D65E800745975 /* SceneDelegate.swift */; };
 		4581383C253D65E800745975 /* recipeat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581383A253D65E800745975 /* recipeat.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		27C61F80AB9345B6A0B57104 /* Pods_recipeat_recipeatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeat_recipeatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		445DB52C5387BA1AC83B3986 /* Pods_recipeatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45696770254254A600663FB7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		45813831253D65E800745975 /* recipeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recipeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45813834253D65E800745975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45813836253D65E800745975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				45813836253D65E800745975 /* SceneDelegate.swift */,
 				45813883253D670600745975 /* Structs_Enums_Classes.swift */,
 				45D996AE25419D55005741FD /* HelperFuncs.swift */,
+				45696770254254A600663FB7 /* ImagePicker.swift */,
 				4581386D253D66CF00745975 /* Views */,
 				4581383D253D65EA00745975 /* Assets.xcassets */,
 				45813842253D65EA00745975 /* LaunchScreen.storyboard */,
@@ -322,6 +325,7 @@
 				45813837253D65E800745975 /* SceneDelegate.swift in Sources */,
 				45813879253D66CF00745975 /* HomeView.swift in Sources */,
 				4581387D253D66CF00745975 /* SignUp.swift in Sources */,
+				45696771254254A600663FB7 /* ImagePicker.swift in Sources */,
 				4581383C253D65E800745975 /* recipeat.xcdatamodeld in Sources */,
 				4581387F253D66CF00745975 /* PostView.swift in Sources */,
 			);
