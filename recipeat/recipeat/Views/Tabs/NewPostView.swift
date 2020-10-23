@@ -14,6 +14,8 @@ struct NewPostView: View {
     @State var sourceType:UIImagePickerController.SourceType = .camera
     @State private var image:UIImage?
     
+    @State var halfModal_shown = false
+    
     //Sample Data
     var steps: [Step] = [
         Step(description: "add eggs", orderNumber: 0),
@@ -47,110 +49,147 @@ struct NewPostView: View {
     ]
     
     var body: some View {
-        VStack{
-            ZStack{
-                HStack{
-                    if image != nil {
-                        Image(uiImage: image!)
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                            .scaledToFit()
-                            .background(Color.blue)
-                    } else {
-                        Image(systemName:"timelapse")
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                            .scaledToFit()
-                            .background(Color.blue)
-                    }
-                    
-                }
-                VStack{
+        ZStack {
+            VStack{
+                ZStack{
                     HStack{
+                        if image != nil {
+                            Image(uiImage: image!)
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                                .scaledToFit()
+                                .background(Color.blue)
+                        } else {
+                            Image(systemName:"timelapse")
+                                .resizable()
+                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                                .scaledToFit()
+                                .background(Color.blue)
+                        }
+                        
+                    }
+                    VStack{
+                        HStack{
+                            Spacer()
+                            
+                            Button(action: {
+                                self.showSheet.toggle()
+                            }) {
+                                Image(systemName: "plus.circle.fill")
+                                    .font(.system(size:30))
+                                    .foregroundColor(.white)
+                                    .shadow(radius: 3)
+                                    .opacity(0.7)
+                                    .padding()
+                            }.actionSheet(isPresented: $showSheet){
+                                ActionSheet(title: Text("Add a picture to your post"), message: nil, buttons: [
+                                    .default(Text("Camera"), action: {
+                                        self.showImagePicker = true
+                                        self.sourceType = .camera
+                                    }),
+                                    .default(Text("Photo Library"), action: {
+                                        self.showImagePicker = true
+                                        self.sourceType = .photoLibrary
+                                    }),
+                                    .cancel()
+                                
+                                ])
+                            }
+                            
+                        }
                         Spacer()
                         
-                        Button(action: {
-                            self.showSheet.toggle()
-                        }) {
-                            Image(systemName: "plus.circle")
-                                .font(.system(size:30))
-                                .foregroundColor(.black)
-                                .background(Color.white)
-                                .opacity(0.7)
-                                .padding()
-                        }.actionSheet(isPresented: $showSheet){
-                            ActionSheet(title: Text("Add a picture to your post"), message: nil, buttons: [
-                                .default(Text("Camera"), action: {
-                                    self.showImagePicker = true
-                                    self.sourceType = .camera
-                                }),
-                                .default(Text("Photo Library"), action: {
-                                    self.showImagePicker = true
-                                    self.sourceType = .photoLibrary
-                                }),
-                                .cancel()
-                            
-                            ])
-                        }
-                        
                     }
-                    Spacer()
+                }
+
+                
+                HStack{
+                    //Ingredients
+                    ZStack{
+                        VStack {
+                            Text("Ingredients")
+                            ScrollView{
+                                HStack {
+                                    VStack(alignment: .leading){
+                                        ForEach(ingredients, id: \.id){ thisIngredient in
+                                            
+                                            Text("\(thisIngredient.amount) \(thisIngredient.name)")
+                                            
+                                        }
+                                    }.padding()
+                                    Spacer()
+                                }
+                                
+                                
+                            }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
+                        }.background(Color.yellow)
+                        VStack{
+                            HStack{
+                                Button(action: {
+                                    self.halfModal_shown.toggle()
+                                }, label: {
+                                    Image(systemName: "plus.circle").padding()
+                                })
+                                
+                                Spacer()
+                            }
+                            Spacer()
+                        }
+                    }
+                    
+                    //Steps
+                    ZStack{
+                        VStack {
+                            Text("Steps")
+                            ScrollView{
+                                HStack {
+                                    VStack(alignment: .leading){
+                                        ForEach(steps, id: \.id){ thisStep in
+                                            Text("\(thisStep.description)")
+                                            
+                                        }
+                                    }.padding()
+                                    Spacer()
+                                }
+                            }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
+                        }.background(Color.green)
+                        VStack{
+                            HStack{
+                                Spacer()
+                                Button(action: {
+                                    self.halfModal_shown.toggle()
+                                }, label: {
+                                    Image(systemName: "plus.circle").padding()
+                                })
+                                
+                            }
+                            Spacer()
+                        }
+                    }
+                    
                     
                 }
-            }
-
+            }.navigationBarTitle("").navigationBarHidden(true)
+            .sheet(isPresented: $showImagePicker){
+                VStack{
+                    ScrollView(.horizontal) {
+                        HStack{
+                            ForEach(0..<8){_ in
+                                Rectangle().frame(width:200, height: 200)
+                                    .background(Color.red)
+                            }
+                        }.padding()
+                    }.frame(height:240)
+                    .background(Color.blue)
+                    
+                    imagePicker(image: self.$image, sourceType: self.sourceType)
+                }
+                
+        }
             
-            HStack{
-                VStack {
-                    Text("Ingredients")
-                    ScrollView{
-                        HStack {
-                            VStack(alignment: .leading){
-                                ForEach(ingredients, id: \.id){ thisIngredient in
-                                    
-                                    Text("\(thisIngredient.amount) \(thisIngredient.name)")
-                                    
-                                }
-                            }.padding()
-                            Spacer()
-                        }
-                        
-                        
-                    }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
-                }.background(Color.yellow)
-                
-                VStack {
-                    Text("Steps")
-                    ScrollView{
-                        HStack {
-                            VStack(alignment: .leading){
-                                ForEach(steps, id: \.id){ thisStep in
-                                    Text("\(thisStep.description)")
-                                    
-                                }
-                            }.padding()
-                            Spacer()
-                        }
-                    }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
-                }.background(Color.green)
-                
+            HalfModalView(isShown: $halfModal_shown){
+                Text("this is a half modal")
             }
-        }.navigationBarTitle("").navigationBarHidden(true)
-        .sheet(isPresented: $showImagePicker){
-            VStack{
-                ScrollView(.horizontal) {
-                    HStack{
-                        ForEach(0..<8){_ in
-                            Rectangle().frame(width:200, height: 200)
-                                .background(Color.red)
-                        }
-                    }.padding()
-                }.frame(height:240)
-                .background(Color.blue)
-                
-                imagePicker(image: self.$image, sourceType: self.sourceType)
-            }
-            
         }
         
     }
