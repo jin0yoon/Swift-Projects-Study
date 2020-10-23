@@ -16,6 +16,10 @@ struct NewPostView: View {
     
     @State var halfModal_shown = false
     
+    @State var halfModal_title = ""
+    @State var halfModal_textField_placeholder = ""
+    @State var halfModal_textField_val = ""
+    
     //Sample Data
     var steps: [Step] = [
         Step(description: "add eggs", orderNumber: 0),
@@ -126,7 +130,9 @@ struct NewPostView: View {
                         VStack{
                             HStack{
                                 Button(action: {
-                                    self.halfModal_shown.toggle()
+                                    self.halfModal_title = "Add an Ingredient"
+                                    self.halfModal_textField_placeholder = "Enter new Ingredient"
+                                    self.halfModal_shown = true
                                 }, label: {
                                     Image(systemName: "plus.circle").padding()
                                 })
@@ -157,7 +163,9 @@ struct NewPostView: View {
                             HStack{
                                 Spacer()
                                 Button(action: {
-                                    self.halfModal_shown.toggle()
+                                    self.halfModal_title = "Add a Step"
+                                    self.halfModal_textField_placeholder = "Enter new step"
+                                    self.halfModal_shown = true
                                 }, label: {
                                     Image(systemName: "plus.circle").padding()
                                 })
@@ -169,7 +177,8 @@ struct NewPostView: View {
                     
                     
                 }
-            }.navigationBarTitle("").navigationBarHidden(true)
+            }.padding(.top, 70)
+            .navigationBarTitle("").navigationBarHidden(true)
             .sheet(isPresented: $showImagePicker){
                 VStack{
                     ScrollView(.horizontal) {
@@ -188,7 +197,10 @@ struct NewPostView: View {
         }
             
             HalfModalView(isShown: $halfModal_shown){
-                Text("this is a half modal")
+                VStack{
+                    Text("\(self.halfModal_title)")
+                    TextField("\(self.halfModal_textField_placeholder)", text: self.$halfModal_textField_val)
+                }
             }
         }
         
