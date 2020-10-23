@@ -82,7 +82,8 @@ struct LoginView: View {
                                                     username: document.data()["username"] as? String ?? "",
                                                     password: document.data()["password"] as? String ?? "",
                                                     name: document.data()["name"] as? String ?? "",
-                                                    email: document.data()["email"] as? String ?? ""
+                                                    email: document.data()["email"] as? String ?? "",
+                                                    document.documentID
                                                 )
                                                 
                                                 
@@ -111,7 +112,20 @@ struct LoginView: View {
                         
                         if let lastLogin_objects = UserDefaults.standard.object(forKey: "lastLogin_objects") as? Data{
                             do{
-                                if let lastSession = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(lastLogin_objects) as? [String:Any?]{
+                                if let lastSession = try
+                                    NSKeyedUnarchiver
+                                    .unarchiveTopLevelObjectWithData(lastLogin_objects) as?
+                                    [String:Any?]{
+                                    
+                                    if let rememberedUser = lastSession["lastLogin_user"] as? user {
+                                        print("logged in successful whit rememvered user")
+                                        print(rememberedUser)
+                                        self.env.currentUser = rememberedUser
+                                    }else{
+                                        print("couldn't unwrap user")
+                                        print(lastSession)
+                                        print(lastSession["lastLogin_user"])
+                                    }
                                     
                                     self.isLoggedIn = true
                                     print("logged in successfully")
