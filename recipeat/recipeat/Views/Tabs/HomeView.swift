@@ -36,7 +36,7 @@ struct HomeView: View {
                 
                 
             }.background(Color.clear)
-        }
+        }.navigationBarTitle("").navigationBarHidden(true)
     }
 }
 

@@ -159,7 +159,7 @@ struct LoginView: View {
             }.navigationBarTitle("").navigationBarHidden(isHidden)
             .onAppear { self.isHidden = true }.navigationBarBackButtonHidden(true)
             
-        }
+        }.navigationBarTitle("").navigationBarHidden(true)
         
     }
     
