@@ -10,7 +10,8 @@ import SwiftUI
 
 struct recipePost: Identifiable {
     var id = UUID()
-    
+    var steps: [Step]
+    var ingredients: [Ingredient]
     var postingUser: String
     var description: String
     var numberOfLikes: Int

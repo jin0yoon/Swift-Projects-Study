@@ -16,11 +16,33 @@ struct PostView: View {
     
     var body: some View {
         
-        VStack{
+        VStack(spacing: 0){
             passed_image
                 .frame(height: 300)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .background(Color.init(red: 0.95, green: 0.95, blue: 0.95).opacity(0.6))
+            
+            HStack{
+                VStack(alignment: .leading){
+                    Text("3 Ingredients")
+                        .foregroundColor(.init(red: 237/255, green: 192/255, blue: 69/255))
+                    Text("15 steps")
+                        .foregroundColor(.init(red: 237/255, green: 86/255, blue: 69/255))
+                }
+                Spacer()
+                VStack(alignment: .trailing){
+                    Text("Prep-time: 15 minutes")
+                        .foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
+                    Text("Cook-time: 35 minutes")
+                        .foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
+                }
+            }.font(.system(size: 15, weight: .bold))
+            .padding(.top)
+            .padding(.leading)
+            .padding(.trailing)
+            
+            
+            
             VStack {
                 HStack{
                     Image(systemName: "heart")
