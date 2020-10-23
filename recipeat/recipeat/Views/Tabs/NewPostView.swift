@@ -135,7 +135,8 @@ struct NewPostView: View {
                 }.background(Color.green)
                 
             }
-        }.sheet(isPresented: $showImagePicker){
+        }.navigationBarTitle("").navigationBarHidden(true)
+        .sheet(isPresented: $showImagePicker){
             VStack{
                 ScrollView(.horizontal) {
                     HStack{

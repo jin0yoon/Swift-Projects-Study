@@ -149,7 +149,6 @@
 				45813872253D66CF00745975 /* LoginView.swift */,
 				45813874253D66CF00745975 /* SignUp.swift */,
 				45813873253D66CF00745975 /* TabbedRootView.swift */,
-				45D996B62541AB94005741FD /* NewPostView.swift */,
 				45813875253D66CF00745975 /* ReusableViews */,
 				4581386E253D66CF00745975 /* Tabs */,
 			);
@@ -161,6 +160,7 @@
 			children = (
 				45813870253D66CF00745975 /* HomeView.swift */,
 				4581386F253D66CF00745975 /* SearchView.swift */,
+				45D996B62541AB94005741FD /* NewPostView.swift */,
 				45813871253D66CF00745975 /* MeView.swift */,
 			);
 			path = Tabs;
