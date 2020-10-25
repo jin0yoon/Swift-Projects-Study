@@ -35,6 +35,13 @@ extension GlobalEnvironment{
 
 }
 
+//hide keyboard
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 func fraction_progress(lowerLimit: Double = 0, upperLimit:Double, current:Double, inverted:Bool = false) -> Double{
     var val:Double = 0
     if current >= upperLimit {

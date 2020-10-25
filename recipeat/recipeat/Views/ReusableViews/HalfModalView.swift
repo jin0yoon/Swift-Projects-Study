@@ -11,7 +11,7 @@ struct HalfModalView<Content:View>: View {
     
     @GestureState private var dragState = DragState.inactive
     @Binding var isShown:Bool
-    var isNear_tabView: Bool = false
+    var isNear_tabView = false
     
     private func onDragEnded(drag: DragGesture.Value) {
         let dragThreshold = modalHeight * (2/3)
@@ -42,6 +42,7 @@ struct HalfModalView<Content:View>: View {
                     .gesture(
                         TapGesture()
                             .onEnded { _ in
+                                UIApplication.shared.endEditing()
                                 self.isShown = false
                         }
                 )
@@ -61,18 +62,17 @@ struct HalfModalView<Content:View>: View {
                             .padding(.bottom, 65)
                             .frame(width: UIScreen.main.bounds.size.width, height:modalHeight)
                             .clipped()
-                        if isNear_tabView{
+                        if isNear_tabView {
                             Spacer().frame(height:65)
                         }
                     }
-                    
                 }
                 .offset(y: isShown ? ((self.dragState.isDragging && dragState.translation.height >= 1) ? dragState.translation.height : 0) : modalHeight)
                 .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
                 .gesture(drag)
                 
                 
-            }
+            }.KeyboardAwarePadding()
         }.edgesIgnoringSafeArea(.all)
         
     }
