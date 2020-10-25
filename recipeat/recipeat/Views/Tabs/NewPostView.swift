@@ -65,7 +65,7 @@ struct NewPostView: View {
     
     var body: some View {
         ZStack {
-            VStack{
+            VStack(spacing:0){
                 Spacer().frame(height:65)
                 ZStack{
                     HStack{
@@ -81,7 +81,7 @@ struct NewPostView: View {
                                 .scaledToFit()
                                 .padding(130)
                                 .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                                .background(Color.init(red: 0.95, green: 0.95, blue: 0.95))
+                                .background(Color.init(red: 1, green: 1, blue: 1))
                         }
                         
                     }
@@ -205,7 +205,7 @@ struct NewPostView: View {
                         
                     
                     
-                }
+                }.background(Color.init(red: 0.95, green: 0.95, blue: 0.95))
                 Spacer().frame(height:65)
             }
             .navigationBarTitle("").navigationBarHidden(true)
