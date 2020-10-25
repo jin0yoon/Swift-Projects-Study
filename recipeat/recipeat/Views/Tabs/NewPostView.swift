@@ -55,20 +55,22 @@ struct NewPostView: View {
     var body: some View {
         ZStack {
             VStack{
+                Spacer().frame(height:65)
                 ZStack{
                     HStack{
                         if image != nil {
                             Image(uiImage: image!)
                                 .resizable()
-                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
                                 .scaledToFit()
-                                .background(Color.blue)
+                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                                .background(Color.black)
                         } else {
-                            Image(systemName:"timelapse")
+                            Image(systemName:"camera")
                                 .resizable()
-                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
                                 .scaledToFit()
-                                .background(Color.blue)
+                                .padding(130)
+                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                                .background(Color.init(red: 0.95, green: 0.95, blue: 0.95))
                         }
                         
                     }
@@ -79,12 +81,19 @@ struct NewPostView: View {
                             Button(action: {
                                 self.showSheet.toggle()
                             }) {
-                                Image(systemName: "plus.circle.fill")
-                                    .font(.system(size:30))
-                                    .foregroundColor(.white)
-                                    .shadow(radius: 3)
-                                    .opacity(0.7)
-                                    .padding()
+                                ZStack {
+                                    
+                                    Image(systemName: "plus.circle")
+                                        .foregroundColor(.black)
+                                    Image(systemName: "plus.circle.fill")
+                                        .foregroundColor(.white)
+                                }
+                                .font(.system(size:30))
+                                .foregroundColor(.white)
+                                .shadow(radius: 4)
+                                .opacity(0.7)
+                                .padding()
+                                
                             }.actionSheet(isPresented: $showSheet){
                                 ActionSheet(title: Text("Add a picture to your post"), message: nil, buttons: [
                                     .default(Text("Camera"), action: {
@@ -105,13 +114,10 @@ struct NewPostView: View {
                         
                     }
                 }
-
-                
                 HStack{
                     //Ingredients
-                    ZStack{
                         VStack {
-                            Text("Ingredients")
+                            Text("Ingredients").font(.headline)
                             ScrollView{
                                 HStack {
                                     VStack(alignment: .leading){
@@ -119,65 +125,57 @@ struct NewPostView: View {
                                             
                                             Text("\(thisIngredient.amount) \(thisIngredient.name)")
                                             
-                                        }
+                                        }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
                                     }.padding()
                                     Spacer()
                                 }
                                 
                                 
-                            }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
-                        }.background(Color.yellow)
-                        VStack{
-                            HStack{
-                                Button(action: {
-                                    self.halfModal_title = "Add an Ingredient"
-                                    self.halfModal_textField_placeholder = "Enter new Ingredient"
-                                    self.halfModal_shown = true
-                                }, label: {
-                                    Image(systemName: "plus.circle").padding()
-                                })
-                                
-                                Spacer()
-                            }
-                            Spacer()
-                        }
-                    }
+                            }.frame(width: UIScreen.main.bounds.size.width/2)
+                            .clipped()
+                            Button(action: {
+                                self.halfModal_title = "ADD AN INGREDIENT"
+                                self.halfModal_textField_placeholder = "Enter new Ingredient"
+                                self.halfModal_shown = true
+                            }, label: {
+                                Text("Add New").padding().font(.headline)
+                            })
+                            
+                        }.background(Color.clear)
+                       
+                        
+                    
                     
                     //Steps
-                    ZStack{
                         VStack {
-                            Text("Steps")
+                            Text("Steps").font(.headline)
                             ScrollView{
                                 HStack {
                                     VStack(alignment: .leading){
                                         ForEach(steps, id: \.id){ thisStep in
                                             Text("\(thisStep.description)")
                                             
-                                        }
+                                        }.foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
                                     }.padding()
                                     Spacer()
                                 }
-                            }.frame(width: UIScreen.main.bounds.size.width/2).clipped()
-                        }.background(Color.green)
-                        VStack{
-                            HStack{
-                                Spacer()
-                                Button(action: {
-                                    self.halfModal_title = "Add a Step"
-                                    self.halfModal_textField_placeholder = "Enter new step"
-                                    self.halfModal_shown = true
-                                }, label: {
-                                    Image(systemName: "plus.circle").padding()
-                                })
-                                
-                            }
-                            Spacer()
-                        }
-                    }
+                            }.frame(width: UIScreen.main.bounds.size.width/2)
+                            .clipped()
+                            Button(action: {
+                                self.halfModal_title = "ADD A STEP"
+                                self.halfModal_textField_placeholder = "Enter new step"
+                                self.halfModal_shown = true
+                            }, label: {
+                                Text("Add New").padding().font(.headline)
+                            })
+                        }.background(Color.clear)
+                        
+                        
                     
                     
                 }
-            }.padding(.top, 70)
+                Spacer().frame(height:65)
+            }
             .navigationBarTitle("").navigationBarHidden(true)
             .sheet(isPresented: $showImagePicker){
                 VStack{
@@ -196,10 +194,23 @@ struct NewPostView: View {
                 
         }
             
-            HalfModalView(isShown: $halfModal_shown){
+            HalfModalView(isShown: $halfModal_shown, modalHeight: 300){
                 VStack{
-                    Text("\(self.halfModal_title)")
+                    Spacer().frame(height:15)
+                    Text("\(self.halfModal_title)").font(.headline)
                     TextField("\(self.halfModal_textField_placeholder)", text: self.$halfModal_textField_val)
+                        .padding(10)
+                        .background(
+                            Rectangle()
+                                .cornerRadius(10)
+                                .foregroundColor(Color.init(red: 0.95, green: 0.95, blue: 0.95))
+                        )
+                        .padding(20)
+                    
+                    Image(systemName: "plus.circle.fill")
+                        .font(.system(size: 35))
+                        .foregroundColor(.init(red: 110/255, green: 210/255, blue: 110/255))
+                    Spacer()
                 }
             }
         }
