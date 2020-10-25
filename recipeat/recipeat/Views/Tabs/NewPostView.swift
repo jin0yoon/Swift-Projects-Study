@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum new_StepOrIngredient {
+    case Step, Ingredient
+}
+
 struct NewPostView: View {
     
     @State var showSheet = false
@@ -19,9 +23,14 @@ struct NewPostView: View {
     @State var halfModal_title = ""
     @State var halfModal_textField_placeholder = ""
     @State var halfModal_textField_val = ""
+    @State var halfModal_height:CGFloat = 380
+    
+    
+    @State var newItem_type:new_StepOrIngredient = .Step
+    @State var ingredientUnit_index = 0
     
     //Sample Data
-    var steps: [Step] = [
+    @State var steps: [Step] = [
 //        Step(description: "add eggs", orderNumber: 0),
 //        Step(description: "add eggs", orderNumber: 1),
 //        Step(description: "add eggs", orderNumber: 2),
@@ -31,7 +40,7 @@ struct NewPostView: View {
 //        Step(description: "add eggs", orderNumber: 6),
 //        Step(description: "add eggs", orderNumber: 7)
     ]
-    var ingredients: [Ingredient] = [
+    @State var ingredients: [Ingredient] = [
 //        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 0),
 //        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 1),
 //        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 2),
@@ -130,8 +139,7 @@ struct NewPostView: View {
                                             }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
                                         } else{
                                             Button(action: {
-                                                self.halfModal_title = "ADD AN INGREDIENT"
-                                                self.halfModal_textField_placeholder = "Enter new Ingredient"
+                                                self.update_halfModal(title: "ADD AN INGREDIENT", placeholder: "Enter new ingredient", itemType: .Ingredient, height: 470)
                                                 self.halfModal_shown = true
                                             }, label: {
                                                 Text("Add some ingredients").padding().foregroundColor(.gray)
@@ -147,8 +155,7 @@ struct NewPostView: View {
                             }.frame(width: UIScreen.main.bounds.size.width/2)
                             .clipped()
                             Button(action: {
-                                self.halfModal_title = "ADD AN INGREDIENT"
-                                self.halfModal_textField_placeholder = "Enter new Ingredient"
+                                self.update_halfModal(title: "ADD AN INGREDIENT", placeholder: "Enter new ingredient", itemType: .Ingredient, height: 470)
                                 self.halfModal_shown = true
                             }, label: {
                                 Text("Add New").padding().font(.headline)
@@ -167,13 +174,12 @@ struct NewPostView: View {
                                     VStack(alignment: .leading){
                                         if steps.count > 0 {
                                             ForEach(steps, id: \.id){ thisStep in
-                                                Text("\(thisStep.description)")
+                                                Text("\(thisStep.orderNumber + 1)." + thisStep.description)
                                                 
                                             }.foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
                                         } else{
                                             Button(action: {
-                                                self.halfModal_title = "ADD A STEP"
-                                                self.halfModal_textField_placeholder = "Enter new step"
+                                                self.update_halfModal(title: "ADD A STEP", placeholder: "Enter new step", itemType: .Step, height: 380)
                                                 self.halfModal_shown = true
                                             }, label: {
                                                 Text("Add some steps").padding().foregroundColor(.gray)
@@ -186,8 +192,7 @@ struct NewPostView: View {
                             }.frame(width: UIScreen.main.bounds.size.width/2)
                             .clipped()
                             Button(action: {
-                                self.halfModal_title = "ADD A STEP"
-                                self.halfModal_textField_placeholder = "Enter new step"
+                                self.update_halfModal(title: "ADD A STEP", placeholder: "Enter new step", itemType: .Step, height: 380)
                                 self.halfModal_shown = true
                             }, label: {
                                 Text("Add New").padding().font(.headline)
@@ -218,28 +223,81 @@ struct NewPostView: View {
                 
         }
             
-            HalfModalView(isShown: $halfModal_shown, modalHeight: 300){
+            HalfModalView(isShown: $halfModal_shown, modalHeight: halfModal_height){
                 VStack{
                     Spacer().frame(height:15)
                     Text("\(self.halfModal_title)").font(.headline)
-                    TextField("\(self.halfModal_textField_placeholder)", text: self.$halfModal_textField_val)
-                        .padding(10)
-                        .background(
-                            Rectangle()
-                                .cornerRadius(10)
-                                .foregroundColor(Color.init(red: 0.95, green: 0.95, blue: 0.95))
-                        )
-                        .padding(20)
+                    VStack {
+                        HStack {
+                            if self.newItem_type == .Ingredient{
+                                TextField("#", text: self.$halfModal_textField_val)
+                                    .frame(width: 40)
+                                    .padding(10)
+                                    .background(
+                                        Rectangle()
+                                            .cornerRadius(10)
+                                            .foregroundColor(Color.init(red: 0.95, green: 0.95, blue: 0.95))
+                                    )
+                                    .padding(20)
+                                    .keyboardType(.numberPad)
+                            }
+                            
+                            
+                            TextField("\(self.halfModal_textField_placeholder)", text: self.$halfModal_textField_val)
+                                .padding(10)
+                                .background(
+                                    Rectangle()
+                                        .cornerRadius(10)
+                                        .foregroundColor(Color.init(red: 0.95, green: 0.95, blue: 0.95))
+                                )
+                                .padding(20)
+                        }
+                        
+                        if self.newItem_type == .Ingredient{
+                            Picker(selection: self.$ingredientUnit_index, label: Text("Unit")) {
+                                ForEach(0..<IngredientUnit.allCases.count){
+                                    Text(IngredientUnit.allCases[$0].rawValue).tag($0)
+                                }
+                            }
+                            .frame(height: 90)
+                            .clipped()
+                            .padding()
+                        }
+                    }
                     
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 35))
-                        .foregroundColor(.init(red: 110/255, green: 210/255, blue: 110/255))
+                    
+                    Button(action: {
+                        self.add_newItem()
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.system(size: 35))
+                            .foregroundColor(.init(red: 110/255, green: 210/255, blue: 110/255))
+                    }
+                    
                     Spacer()
                 }
             }
         }
         
     }
+    
+    func update_halfModal(title:String, placeholder:String, itemType:new_StepOrIngredient, height:CGFloat){
+        halfModal_title = title
+        halfModal_textField_placeholder = placeholder
+        newItem_type = itemType
+        halfModal_height = height
+        
+    }
+    
+    func add_newItem(){
+        if newItem_type == .Step {
+            steps.append(Step(description: halfModal_textField_val, orderNumber: steps.count))
+        }
+        UIApplication.shared.endEditing()
+        halfModal_shown = false
+    }
+    
+   
 }
 
 struct NewPostView_Previews: PreviewProvider {
