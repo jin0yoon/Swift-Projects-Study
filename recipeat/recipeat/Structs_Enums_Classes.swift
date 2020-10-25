@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct recipePost: Identifiable {
+struct RecipePost: Identifiable {
     var id = UUID()
     var steps: [Step]
     var ingredients: [Ingredient]
@@ -16,6 +16,19 @@ struct recipePost: Identifiable {
     var description: String
     var numberOfLikes: Int
     var image: Image
+    
+    //Modify recipe post so that we can turn it into a [String:Any]
+    var dictionary: [String: Any]{
+        return[
+            "id" : id.uuidString,
+            "steps" : steps,
+            "ingredients" : ingredients,
+            "postingUser" : postingUser,
+            "description" : description,
+            "numberOfLikes" : numberOfLikes
+            
+        ]
+    }
 }
 
 //In global environment we need to store the users document.doc
@@ -93,6 +106,16 @@ struct Ingredient: Identifiable {
     var amount:Double
     var amountUnit: IngredientUnit
     var orderNumber:Int
+    
+    var dictionary: [String:Any]{
+        return [
+            "id": id.uuidString,
+            "name": name,
+            "amount": amount,
+            "amountUnit": amountUnit.rawValue,
+            "orderNumber": orderNumber,
+        ]
+    }
 }
 
 
@@ -100,4 +123,13 @@ struct Step: Identifiable {
     var id = UUID()
     var description:String
     var orderNumber:Int
+    
+    var dictionary: [String:Any]{
+        return [
+            "id": id.uuidString,
+            "description": description,
+            "orderNumber": orderNumber,
+            
+        ]
+    }
 }
