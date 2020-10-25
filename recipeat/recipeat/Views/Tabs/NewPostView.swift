@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SPAlert
 
 enum new_StepOrIngredient {
     case Step, Ingredient
@@ -135,7 +136,7 @@ struct NewPostView: View {
                                         if ingredients.count > 0 {
                                             ForEach(ingredients, id: \.id){ thisIngredient in
                                                 
-                                                Text("\(thisIngredient.amount) \(thisIngredient.amountUnit.rawValue) \(thisIngredient.name)")
+                                                Text("\(thisIngredient.amount.stringWithoutZeroFraction) \(thisIngredient.amountUnit.rawValue) \(thisIngredient.name)")
                                                     .padding(.bottom, 3)
                                                 
                                             }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
@@ -294,23 +295,52 @@ struct NewPostView: View {
         
     }
     
+    func possible_stringToDouble(_ stringToValidate:String) -> Double? {
+        let val:Double? = Double(stringToValidate) ?? nil
+        
+        if let val = val{
+            return val
+        }else{
+            return nil
+        }
+    }
+    
     func hideModal() {
         UIApplication.shared.endEditing()
         halfModal_shown = false
     }
     
     func add_newItem(){
-        if newItem_type == .Step {
-            steps.append(Step(description: halfModal_textField2_val, orderNumber: steps.count))
-        }else if newItem_type == .Ingredient{
-            let thisIngredientUnit = IngredientUnit.allCases[ingredientUnit_index]
-            
-            ingredients.append(Ingredient(name: halfModal_textField2_val,
-                                          amount: Double(halfModal_textField1_val) ?? -1,
-                                          amountUnit: thisIngredientUnit,
-                                          orderNumber: ingredients.count))
+        if halfModal_textField2_val == "" {
+            let alertView = SPAlertView(title: newItem_type == .Step ? "Please add a step" : "Please add an Ingredient", message: "Make sure no textfields are left blank", preset: SPAlertPreset.error)
+            alertView.duration = 3
+            alertView.present()
+        }else{
+            if newItem_type == .Step {
+                steps.append(Step(description: halfModal_textField2_val, orderNumber: steps.count))
+                hideModal()
+            }else if newItem_type == .Ingredient{
+                
+                if let amount = possible_stringToDouble(halfModal_textField1_val){
+                    let thisIngredientUnit = IngredientUnit.allCases[ingredientUnit_index]
+                    
+                    ingredients.append(Ingredient(name: halfModal_textField2_val,
+                                                  amount: amount,
+                                                  amountUnit: thisIngredientUnit,
+                                                  orderNumber: ingredients.count))
+                    
+                    hideModal()
+                }else{
+                    let alertView = SPAlertView(title: "Check the amount", message: "Please enter a number (i.e. \"1\" or \"3.4\")", preset: SPAlertPreset.error)
+                    alertView.duration = 3
+                    alertView.present()
+                }
+                
+                
+            }
         }
-        hideModal()
+        
+        
     }
     
    
