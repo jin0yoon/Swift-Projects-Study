@@ -21,8 +21,8 @@ struct RecipePost: Identifiable {
     var dictionary: [String: Any]{
         return[
             "id" : id.uuidString,
-            "steps" : steps,
-            "ingredients" : ingredients,
+            "steps" : steps.formatForFirebase(),
+            "ingredients" : ingredients.formatForFirebase(),
             "postingUser" : postingUser,
             "description" : description,
             "numberOfLikes" : numberOfLikes
