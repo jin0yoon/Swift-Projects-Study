@@ -14,6 +14,8 @@ enum new_StepOrIngredient {
 
 struct NewPostView: View {
     
+    @EnvironmentObject var env: GlobalEnvironment
+    
     @State var showSheet = false
     @State var showImagePicker = false
     @State var sourceType:UIImagePickerController.SourceType = .camera
@@ -206,6 +208,38 @@ struct NewPostView: View {
                     
                     
                 }.background(Color.init(red: 0.95, green: 0.95, blue: 0.95))
+                
+                Button(action: {
+                    if let thisImage = self.image {
+                        let thisRecipePost = RecipePost(steps: self.steps,
+                                                        ingredients: self.ingredients,
+                                                        postingUser: self.env.currentUser.establishedID,
+                                                        description: "",
+                                                        numberOfLikes: 0,
+                                                        image: Image(uiImage: thisImage)
+                            
+                        )
+                        
+                        print(thisRecipePost.dictionary)
+                        
+                        firestoreSubmit_data(docRef_string: "recipe/\(thisRecipePost.id)", dataToSave: thisRecipePost.dictionary, completion: {_ in })
+                    } else {
+                        let alertView = SPAlertView(title: "Add a photo", message: "You cannot submit a recipe without a photo", preset: SPAlertPreset.error)
+                        alertView.duration = 3
+                        alertView.present()
+                    }
+                }) {
+                    Text("SUBMIT RECIPE")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(20)
+                        .frame(height:48)
+                        .background(darkBlue)
+                        .cornerRadius(24)
+                        .padding(10)
+                }
+                
+                //TabBar space
                 Spacer().frame(height:65)
             }
             .navigationBarTitle("").navigationBarHidden(true)
