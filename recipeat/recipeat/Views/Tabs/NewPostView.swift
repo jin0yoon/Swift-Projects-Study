@@ -22,34 +22,34 @@ struct NewPostView: View {
     
     //Sample Data
     var steps: [Step] = [
-        Step(description: "add eggs", orderNumber: 0),
-        Step(description: "add eggs", orderNumber: 1),
-        Step(description: "add eggs", orderNumber: 2),
-        Step(description: "add eggs", orderNumber: 3),
-        Step(description: "add eggs", orderNumber: 4),
-        Step(description: "add eggs", orderNumber: 5),
-        Step(description: "add eggs", orderNumber: 6),
-        Step(description: "add eggs", orderNumber: 7)
+//        Step(description: "add eggs", orderNumber: 0),
+//        Step(description: "add eggs", orderNumber: 1),
+//        Step(description: "add eggs", orderNumber: 2),
+//        Step(description: "add eggs", orderNumber: 3),
+//        Step(description: "add eggs", orderNumber: 4),
+//        Step(description: "add eggs", orderNumber: 5),
+//        Step(description: "add eggs", orderNumber: 6),
+//        Step(description: "add eggs", orderNumber: 7)
     ]
     var ingredients: [Ingredient] = [
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 0),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 1),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 2),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 3),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 4),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 5),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 6),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 7),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 8),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 9),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 10),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 11),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 12),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 13),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 14),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 15),
-        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 14),
-        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 15)
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 0),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 1),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 2),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 3),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 4),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 5),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 6),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 7),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 8),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 9),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 10),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 11),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 12),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 13),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 14),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 15),
+//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 14),
+//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 15)
     ]
     
     var body: some View {
@@ -121,11 +121,24 @@ struct NewPostView: View {
                             ScrollView{
                                 HStack {
                                     VStack(alignment: .leading){
-                                        ForEach(ingredients, id: \.id){ thisIngredient in
-                                            
-                                            Text("\(thisIngredient.amount) \(thisIngredient.name)")
-                                            
-                                        }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
+                                        
+                                        if ingredients.count > 0 {
+                                            ForEach(ingredients, id: \.id){ thisIngredient in
+                                                
+                                                Text("\(thisIngredient.amount) \(thisIngredient.name)")
+                                                
+                                            }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
+                                        } else{
+                                            Button(action: {
+                                                self.halfModal_title = "ADD AN INGREDIENT"
+                                                self.halfModal_textField_placeholder = "Enter new Ingredient"
+                                                self.halfModal_shown = true
+                                            }, label: {
+                                                Text("Add some ingredients").padding().foregroundColor(.gray)
+                                            })
+                                        }
+                                        
+                                        
                                     }.padding()
                                     Spacer()
                                 }
@@ -152,10 +165,21 @@ struct NewPostView: View {
                             ScrollView{
                                 HStack {
                                     VStack(alignment: .leading){
-                                        ForEach(steps, id: \.id){ thisStep in
-                                            Text("\(thisStep.description)")
-                                            
-                                        }.foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
+                                        if steps.count > 0 {
+                                            ForEach(steps, id: \.id){ thisStep in
+                                                Text("\(thisStep.description)")
+                                                
+                                            }.foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
+                                        } else{
+                                            Button(action: {
+                                                self.halfModal_title = "ADD A STEP"
+                                                self.halfModal_textField_placeholder = "Enter new step"
+                                                self.halfModal_shown = true
+                                            }, label: {
+                                                Text("Add some steps").padding().foregroundColor(.gray)
+                                            })
+                                        }
+                                        
                                     }.padding()
                                     Spacer()
                                 }
