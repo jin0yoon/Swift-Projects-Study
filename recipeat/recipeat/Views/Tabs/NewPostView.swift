@@ -22,7 +22,8 @@ struct NewPostView: View {
     
     @State var halfModal_title = ""
     @State var halfModal_textField_placeholder = ""
-    @State var halfModal_textField_val = ""
+    @State var halfModal_textField1_val = ""
+    @State var halfModal_textField2_val = ""
     @State var halfModal_height:CGFloat = 380
     
     
@@ -134,7 +135,8 @@ struct NewPostView: View {
                                         if ingredients.count > 0 {
                                             ForEach(ingredients, id: \.id){ thisIngredient in
                                                 
-                                                Text("\(thisIngredient.amount) \(thisIngredient.name)")
+                                                Text("\(thisIngredient.amount) \(thisIngredient.amountUnit.rawValue) \(thisIngredient.name)")
+                                                    .padding(.bottom, 3)
                                                 
                                             }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
                                         } else{
@@ -230,7 +232,7 @@ struct NewPostView: View {
                     VStack {
                         HStack {
                             if self.newItem_type == .Ingredient{
-                                TextField("#", text: self.$halfModal_textField_val)
+                                TextField("#", text: self.$halfModal_textField1_val)
                                     .frame(width: 40)
                                     .padding(10)
                                     .background(
@@ -243,7 +245,7 @@ struct NewPostView: View {
                             }
                             
                             
-                            TextField("\(self.halfModal_textField_placeholder)", text: self.$halfModal_textField_val)
+                            TextField("\(self.halfModal_textField_placeholder)", text: self.$halfModal_textField2_val)
                                 .padding(10)
                                 .background(
                                     Rectangle()
@@ -259,6 +261,7 @@ struct NewPostView: View {
                                     Text(IngredientUnit.allCases[$0].rawValue).tag($0)
                                 }
                             }
+                            .labelsHidden()
                             .frame(height: 90)
                             .clipped()
                             .padding()
@@ -282,6 +285,8 @@ struct NewPostView: View {
     }
     
     func update_halfModal(title:String, placeholder:String, itemType:new_StepOrIngredient, height:CGFloat){
+        halfModal_textField1_val = ""
+        halfModal_textField2_val = ""
         halfModal_title = title
         halfModal_textField_placeholder = placeholder
         newItem_type = itemType
@@ -289,12 +294,23 @@ struct NewPostView: View {
         
     }
     
-    func add_newItem(){
-        if newItem_type == .Step {
-            steps.append(Step(description: halfModal_textField_val, orderNumber: steps.count))
-        }
+    func hideModal() {
         UIApplication.shared.endEditing()
         halfModal_shown = false
+    }
+    
+    func add_newItem(){
+        if newItem_type == .Step {
+            steps.append(Step(description: halfModal_textField2_val, orderNumber: steps.count))
+        }else if newItem_type == .Ingredient{
+            let thisIngredientUnit = IngredientUnit.allCases[ingredientUnit_index]
+            
+            ingredients.append(Ingredient(name: halfModal_textField2_val,
+                                          amount: Double(halfModal_textField1_val) ?? -1,
+                                          amountUnit: thisIngredientUnit,
+                                          orderNumber: ingredients.count))
+        }
+        hideModal()
     }
     
    
