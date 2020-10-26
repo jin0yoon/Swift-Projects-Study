@@ -55,13 +55,11 @@ struct MeView: View {
                 }
                 
                 ScrollView{
-                    ForEach(0..<20){_ in
-                        HStack{
-                            Spacer()
-                            Text("This is a recipe post")
-                        }.frame(height: 50)
+                    ForEach(0..<env.currentUser.publishedRecipes.count){ i in
+                        
+                        Me_PostView()
                     }
-                }.background(Color.red)
+                }
             }
             
         }.navigationBarTitle("").navigationBarHidden(true)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4509A6FE254703DC005A0D50 /* Me_PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509A6FD254703DC005A0D50 /* Me_PostView.swift */; };
 		4561D9462545541400A6AA86 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4561D9452545541400A6AA86 /* KeyboardAwareModifier.swift */; };
 		45696771254254A600663FB7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45696770254254A600663FB7 /* ImagePicker.swift */; };
 		456967752542757900663FB7 /* HalfModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456967742542757900663FB7 /* HalfModalView.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		27C61F80AB9345B6A0B57104 /* Pods_recipeat_recipeatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeat_recipeatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		445DB52C5387BA1AC83B3986 /* Pods_recipeatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recipeatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4509A6FD254703DC005A0D50 /* Me_PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me_PostView.swift; sourceTree = "<group>"; };
 		4561D9452545541400A6AA86 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		45696770254254A600663FB7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		456967742542757900663FB7 /* HalfModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				45813876253D66CF00745975 /* StoryCircleView.swift */,
 				45813877253D66CF00745975 /* PostView.swift */,
 				456967742542757900663FB7 /* HalfModalView.swift */,
+				4509A6FD254703DC005A0D50 /* Me_PostView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				4581387D253D66CF00745975 /* SignUp.swift in Sources */,
 				45696771254254A600663FB7 /* ImagePicker.swift in Sources */,
 				4581383C253D65E800745975 /* recipeat.xcdatamodeld in Sources */,
+				4509A6FE254703DC005A0D50 /* Me_PostView.swift in Sources */,
 				4581387F253D66CF00745975 /* PostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
