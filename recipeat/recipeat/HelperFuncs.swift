@@ -35,6 +35,35 @@ extension GlobalEnvironment{
     }
     
 }
+    
+    func initializeListener_currentUser(){
+        Firestore.firestore().document("users/\(self.currentUser.establishedID)")
+            .addSnapshotListener { querySnapshot, error in
+                guard let document = querySnapshot else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+                
+                print("new information found with listener")
+                print("\(document.documentID) => \(document.data())")
+                if let thisData = document.data() {
+                    
+                    self.currentUser = user.init(
+                        username: thisData["username"] as? String ?? "",
+                        password: thisData["password"] as? String ?? "",
+                        name: thisData["name"] as? String ?? "",
+                        email: thisData["email"] as? String ?? "",
+                        publishedRecipes: thisData["publishedRecipes"] as? [String] ?? [],
+                        document.documentID
+                    )
+                    
+                    self.save_UserDefaults()
+                }
+                
+                
+                
+        }
+    }
 
 }
 
