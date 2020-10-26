@@ -283,7 +283,7 @@ struct NewPostView: View {
                             })
                             for i in 0...self.images.count-1{
                                 let image = self.images[i].image
-                                uploadImage("recipe_\(thisRecipePost.id)_0", image: image, completion: {_ in
+                                uploadImage("recipe_\(thisRecipePost.id)_\(i)", image: image, completion: {_ in
                                     actionsCompleted += 1
                                     check_success()
                                 })
