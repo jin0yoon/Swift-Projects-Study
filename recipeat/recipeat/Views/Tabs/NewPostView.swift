@@ -78,12 +78,19 @@ struct NewPostView: View {
                                 .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
                                 .background(Color.black)
                         } else {
-                            Image(systemName:"camera")
-                                .resizable()
-                                .scaledToFit()
-                                .padding(130)
-                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                                .background(Color.init(red: 1, green: 1, blue: 1))
+                            Button(action: {
+                                self.showSheet.toggle()
+                            }) {
+                                //Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+                                Image("pasta_icon")
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(130)
+                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                                    .background(Color.init(red: 1, green: 1, blue: 1))
+                            }
+                            
                         }
                         
                     }
@@ -115,7 +122,7 @@ struct NewPostView: View {
                                     }),
                                     .default(Text("Photo Library"), action: {
                                         self.showImagePicker = true
-                                        self.sourceType = .photoLibrary
+                                        self.sourceType = .savedPhotosAlbum
                                     }),
                                     .cancel()
                                 
@@ -127,135 +134,185 @@ struct NewPostView: View {
                         
                     }
                 }
-                HStack{
-                    //Ingredients
-                        VStack {
-                            Text("Ingredients").font(.headline)
-                            ScrollView{
-                                HStack {
-                                    VStack(alignment: .leading){
-                                        
-                                        if ingredients.count > 0 {
-                                            ForEach(ingredients, id: \.id){ thisIngredient in
-                                                
-                                                Text("\(thisIngredient.amount.stringWithoutZeroFraction) \(thisIngredient.amountUnit.rawValue) \(thisIngredient.name)")
-                                                    .padding(.bottom, 3)
-                                                
-                                            }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
-                                        } else{
-                                            Button(action: {
-                                                self.update_halfModal(title: "ADD AN INGREDIENT", placeholder: "Enter new ingredient", itemType: .Ingredient, height: 470)
-                                                self.halfModal_shown = true
-                                            }, label: {
-                                                Text("Add some ingredients").padding().foregroundColor(.gray)
-                                            })
-                                        }
-                                        
-                                        
-                                    }.padding()
-                                    Spacer()
-                                }
+                
+                VStack{
+                    HStack(spacing:0){
+                        //Ingredients
+                            VStack {
+                                Text("INGREDIENTS")
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(10)
+                                    .background(darkBlue)
+                                    .foregroundColor(.white)
+                                ScrollView{
+                                    HStack {
+                                        VStack(alignment: .leading){
+                                            
+                                            if ingredients.count > 0 {
+                                                ForEach(ingredients, id: \.id){ thisIngredient in
+                                                    
+                                                    Text("\(thisIngredient.amount.stringWithoutZeroFraction) \(thisIngredient.amountUnit.rawValue) \(thisIngredient.name)")
+                                                        .padding(.bottom, 3)
+                                                    
+                                                }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
+                                            } else{
+                                                Button(action: {
+                                                    self.update_halfModal(title: "ADD AN INGREDIENT", placeholder: "Enter new ingredient", itemType: .Ingredient, height: 470)
+                                                    self.halfModal_shown = true
+                                                }, label: {
+                                                    Text("Add some ingredients").padding().foregroundColor(.gray)
+                                                        .multilineTextAlignment(.center)
+                                                        .frame(maxWidth: .infinity)
+                                                })
+                                            }
+                                            
+                                            
+                                        }.padding(5)
+                                        Spacer()
+                                    }
+                                    
+                                    
+                                }.frame(width: UIScreen.main.bounds.size.width/2)
+                                .clipped()
+                                Button(action: {
+                                    self.update_halfModal(title: "ADD AN INGREDIENT", placeholder: "Enter new ingredient", itemType: .Ingredient, height: 470)
+                                    self.halfModal_shown = true
+                                }, label: {
+                                    Text("+ INGREDIENT")
+                                        .padding()
+                                        .font(.system(size:12, weight:.bold))
+                                        .foregroundColor(.white)
+                                        .frame(height:24)
+                                        .background(mediumBlue)
+                                        .cornerRadius(12)
+                                        .padding(.bottom, 8)
+                                })
                                 
-                                
-                            }.frame(width: UIScreen.main.bounds.size.width/2)
-                            .clipped()
-                            Button(action: {
-                                self.update_halfModal(title: "ADD AN INGREDIENT", placeholder: "Enter new ingredient", itemType: .Ingredient, height: 470)
-                                self.halfModal_shown = true
-                            }, label: {
-                                Text("Add New").padding().font(.headline)
-                            })
+                            }.background(Color.clear)
+                           
                             
-                        }.background(Color.clear)
-                       
-                        
-                    
-                    
-                    //Steps
-                        VStack {
-                            Text("Steps").font(.headline)
-                            ScrollView{
-                                HStack {
-                                    VStack(alignment: .leading){
-                                        if steps.count > 0 {
-                                            ForEach(steps, id: \.id){ thisStep in
-                                                Text("\(thisStep.orderNumber + 1)." + thisStep.description)
-                                                
-                                            }.foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
-                                        } else{
-                                            Button(action: {
-                                                self.update_halfModal(title: "ADD A STEP", placeholder: "Enter new step", itemType: .Step, height: 380)
-                                                self.halfModal_shown = true
-                                            }, label: {
-                                                Text("Add some steps").padding().foregroundColor(.gray)
-                                            })
-                                        }
-                                        
-                                    }.padding()
-                                    Spacer()
-                                }
-                            }.frame(width: UIScreen.main.bounds.size.width/2)
-                            .clipped()
-                            Button(action: {
-                                self.update_halfModal(title: "ADD A STEP", placeholder: "Enter new step", itemType: .Step, height: 380)
-                                self.halfModal_shown = true
-                            }, label: {
-                                Text("Add New").padding().font(.headline)
-                            })
-                        }.background(Color.clear)
                         
                         
+                        //Steps
+                            VStack {
+                                Text("STEPS")
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(10)
+                                    .background(darkBlue)
+                                    .foregroundColor(.white)
+                                ScrollView{
+                                    HStack {
+                                        VStack(alignment: .leading){
+                                            if steps.count > 0 {
+                                                ForEach(steps, id: \.id){ thisStep in
+                                                    Text("\(thisStep.orderNumber + 1)." + thisStep.description)
+                                                    
+                                                }.foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
+                                            } else{
+                                                Button(action: {
+                                                    self.update_halfModal(title: "ADD A STEP", placeholder: "Enter new step", itemType: .Step, height: 380)
+                                                    self.halfModal_shown = true
+                                                }, label: {
+                                                    Text("Add some steps").padding().foregroundColor(.gray)
+                                                        .multilineTextAlignment(.center)
+                                                        .frame(maxWidth: .infinity)
+                                                })
+                                            }
+                                            
+                                        }.padding(5)
+                                        Spacer()
+                                    }
+                                }.frame(width: UIScreen.main.bounds.size.width/2)
+                                .clipped()
+                                Button(action: {
+                                    self.update_halfModal(title: "ADD A STEP", placeholder: "Enter new step", itemType: .Step, height: 380)
+                                    self.halfModal_shown = true
+                                }, label: {
+                                    Text("+ STEP")
+                                    .padding()
+                                    .font(.system(size:12, weight:.bold))
+                                    .foregroundColor(.white)
+                                    .frame(height:24)
+                                    .background(mediumBlue)
+                                    .cornerRadius(12)
+                                    .padding(.bottom, 8)
+                                })
+                            }.background(Color.clear)
+                            
+                            
+                        
+                        
+                    }
                     
+                    Button(action: {
+                        if let thisImage = self.image {
+                            let thisRecipePost = RecipePost(steps: self.steps,
+                                                            ingredients: self.ingredients,
+                                                            postingUser: self.env.currentUser.establishedID,
+                                                            description: "",
+                                                            numberOfLikes: 0,
+                                                            image: Image(uiImage: thisImage)
+                                
+                            )
+                            
+                            print(thisRecipePost.dictionary)
+                            
+                            firestoreSubmit_data(docRef_string: "recipe/\(thisRecipePost.id)", dataToSave: thisRecipePost.dictionary, completion: {_ in })
+                        } else {
+                            let alertView = SPAlertView(title: "Add a photo", message: "You cannot submit a recipe without a photo", preset: SPAlertPreset.error)
+                            alertView.duration = 3
+                            alertView.present()
+                        }
+                    }) {
+                        Text("SUBMIT RECIPE")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding(20)
+                            .frame(height:48)
+                            .frame(maxWidth: .infinity)
+                            .background(vDarkBlue)
+                            .shadow(radius: 3)
+                            .padding(.top, 10)
+                    }
                     
+                    //TabBar space
+                    Spacer().frame(height:65)
                 }.background(Color.init(red: 0.95, green: 0.95, blue: 0.95))
                 
-                Button(action: {
-                    if let thisImage = self.image {
-                        let thisRecipePost = RecipePost(steps: self.steps,
-                                                        ingredients: self.ingredients,
-                                                        postingUser: self.env.currentUser.establishedID,
-                                                        description: "",
-                                                        numberOfLikes: 0,
-                                                        image: Image(uiImage: thisImage)
-                            
-                        )
-                        
-                        print(thisRecipePost.dictionary)
-                        
-                        firestoreSubmit_data(docRef_string: "recipe/\(thisRecipePost.id)", dataToSave: thisRecipePost.dictionary, completion: {_ in })
-                    } else {
-                        let alertView = SPAlertView(title: "Add a photo", message: "You cannot submit a recipe without a photo", preset: SPAlertPreset.error)
-                        alertView.duration = 3
-                        alertView.present()
-                    }
-                }) {
-                    Text("SUBMIT RECIPE")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding(20)
-                        .frame(height:48)
-                        .background(darkBlue)
-                        .cornerRadius(24)
-                        .padding(10)
-                }
-                
-                //TabBar space
-                Spacer().frame(height:65)
             }
             .navigationBarTitle("").navigationBarHidden(true)
             .sheet(isPresented: $showImagePicker){
-                VStack{
+                VStack(spacing:0){
                     ScrollView(.horizontal) {
                         HStack{
                             ForEach(0..<8){_ in
                                 Rectangle().frame(width:200, height: 200)
                                     .background(Color.red)
+                                    .shadow(radius:3)
                             }
                         }.padding()
-                    }.frame(height:240)
-                    .background(Color.blue)
+                    }
+                    .frame(height:240)
+                    .background(Color.white)
                     
-                    imagePicker(image: self.$image, sourceType: self.sourceType)
+                    HStack{
+                        Button(action: {self.showImagePicker.toggle()}){
+                            Text("DONE")
+                                .padding()
+                                .font(.system(size:12, weight:.bold))
+                                .foregroundColor(.white)
+                                .frame(height:24)
+                                .background(mediumBlue)
+                                .cornerRadius(12)
+                                
+                            
+                        }
+                    }.frame(height:57).frame(maxWidth: .infinity).background(Color.white)
+                    .zIndex(1)
+                    
+                    imagePicker(image: self.$image, sourceType: self.sourceType).offset(y: -57)
                 }
                 
         }
