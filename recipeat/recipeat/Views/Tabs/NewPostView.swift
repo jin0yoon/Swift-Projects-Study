@@ -40,34 +40,10 @@ struct NewPostView: View {
     
     //Sample Data
     @State var steps: [Step] = [
-//        Step(description: "add eggs", orderNumber: 0),
-//        Step(description: "add eggs", orderNumber: 1),
-//        Step(description: "add eggs", orderNumber: 2),
-//        Step(description: "add eggs", orderNumber: 3),
-//        Step(description: "add eggs", orderNumber: 4),
-//        Step(description: "add eggs", orderNumber: 5),
-//        Step(description: "add eggs", orderNumber: 6),
-//        Step(description: "add eggs", orderNumber: 7)
+
     ]
     @State var ingredients: [Ingredient] = [
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 0),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 1),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 2),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 3),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 4),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 5),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 6),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 7),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 8),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 9),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 10),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 11),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 12),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 13),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 14),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 15),
-//        Ingredient(name: "eggs", amount: 3, amountUnit: .whole, orderNumber: 14),
-//        Ingredient(name: "parsley", amount: 2, amountUnit: .whole, orderNumber: 15)
+
     ]
     
     var body: some View {
@@ -75,31 +51,39 @@ struct NewPostView: View {
             VStack(spacing:0){
                 Spacer().frame(height:65)
                 ZStack{
-                    HStack{
-                        if images.count > 0 {
-                            HStack{
-                                Image(uiImage: images[0].image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                                    .background(Color.black)
+                    
+                    
+                        HStack(spacing:0){
+                            if images.count > 0 {
+                                ScrollView(.horizontal) {
+                                    HStack(spacing:0){
+                                        ForEach(self.images, id: \.id){ i in
+                                            
+                                            Image(uiImage: i.image)
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: UIScreen.main.bounds.size.width, height: 300)
+                                        }
+                                    }.background(Color.black)
+                                }.background(Color.black)
+                
+                                
+                            } else {
+                                Button(action: {
+                                    self.showSheet.toggle()
+                                }) {
+                                    //Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+                                    Image("pasta_icon")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(50)
+                                        .frame(width: UIScreen.main.bounds.size.width, height: 300)
+                                        .background(Color.init(red: 1, green: 1, blue: 1))
+                                }
+                                
                             }
                             
-                        } else {
-                            Button(action: {
-                                self.showSheet.toggle()
-                            }) {
-                                //Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-                                Image("pasta_icon")
-                                    .renderingMode(.original)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .padding(130)
-                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                                    .background(Color.init(red: 1, green: 1, blue: 1))
-                            }
-                            
-                        }
                         
                     }
                     VStack{
@@ -140,7 +124,7 @@ struct NewPostView: View {
                         }
                         Spacer()
                         
-                    }
+                    }.frame(height:300)
                 }
                 
                 VStack{
@@ -161,9 +145,9 @@ struct NewPostView: View {
                                                 ForEach(ingredients, id: \.id){ thisIngredient in
                                                     
                                                     Text("\(thisIngredient.amount.stringWithoutZeroFraction) \(thisIngredient.amountUnit.rawValue) \(thisIngredient.name)")
-                                                        .padding(.bottom, 3)
                                                         .padding(5).padding(.leading, 3).padding(.trailing, 3)
                                                         .background(Color.init(red: 0.85, green: 0.85, blue: 0.85))
+                                                        .padding(.bottom, 4)
                                                     .cornerRadius(5)
                                                     
                                                 }.foregroundColor(.init(red: 0.3, green: 0.3, blue: 0.3))
@@ -219,8 +203,12 @@ struct NewPostView: View {
                                             if steps.count > 0 {
                                                 ForEach(steps, id: \.id){ thisStep in
                                                     Text("\(thisStep.orderNumber + 1)." + thisStep.description)
+                                                        .padding(5).padding(.leading, 3).padding(.trailing, 3)
+                                                        .background(Color.init(red: 0.85, green: 0.85, blue: 0.85))
+                                                        .padding(.bottom, 4)
+                                                    .cornerRadius(5)
                                                     
-                                                }.foregroundColor(.init(red: 108/255, green: 172/255, blue: 204/255))
+                                                }.foregroundColor(.init(red: 0.3, green: 0.3, blue: 0.3))
                                             } else{
                                                 Button(action: {
                                                     self.update_halfModal(title: "ADD A STEP", placeholder: "Enter new step", itemType: .Step, height: 380)
