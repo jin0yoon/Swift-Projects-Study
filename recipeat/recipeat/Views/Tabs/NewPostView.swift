@@ -19,7 +19,7 @@ struct NewPostView: View {
     @State var showSheet = false
     @State var showImagePicker = false
     @State var sourceType:UIImagePickerController.SourceType = .camera
-    @State private var image:UIImage?
+    @State private var images:[UIImage] = []
     
     @State var halfModal_shown = false
     
@@ -71,12 +71,15 @@ struct NewPostView: View {
                 Spacer().frame(height:65)
                 ZStack{
                     HStack{
-                        if image != nil {
-                            Image(uiImage: image!)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
-                                .background(Color.black)
+                        if images.count > 0 {
+                            HStack{
+                                Image(uiImage: images[0])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
+                                    .background(Color.black)
+                            }
+                            
                         } else {
                             Button(action: {
                                 self.showSheet.toggle()
@@ -154,8 +157,11 @@ struct NewPostView: View {
                                                     
                                                     Text("\(thisIngredient.amount.stringWithoutZeroFraction) \(thisIngredient.amountUnit.rawValue) \(thisIngredient.name)")
                                                         .padding(.bottom, 3)
+                                                        .padding(5).padding(.leading, 3).padding(.trailing, 3)
+                                                        .background(Color.init(red: 0.85, green: 0.85, blue: 0.85))
+                                                    .cornerRadius(5)
                                                     
-                                                }.foregroundColor(.init(red: 108/255, green: 204/255, blue: 108/255))
+                                                }.foregroundColor(.init(red: 0.3, green: 0.3, blue: 0.3))
                                             } else{
                                                 Button(action: {
                                                     self.update_halfModal(title: "ADD AN INGREDIENT", placeholder: "Enter new ingredient", itemType: .Ingredient, height: 470)
@@ -247,20 +253,20 @@ struct NewPostView: View {
                     }
                     
                     Button(action: {
-                        if let thisImage = self.image {
+                        if images.count > 0 {
                             let thisRecipePost = RecipePost(steps: self.steps,
                                                             ingredients: self.ingredients,
                                                             postingUser: self.env.currentUser.establishedID,
                                                             description: "",
                                                             numberOfLikes: 0,
-                                                            image: Image(uiImage: thisImage)
+                                                            image: Image(uiImage: images[0])
                                 
                             )
                             
                             print(thisRecipePost.dictionary)
                             
                             firestoreSubmit_data(docRef_string: "recipe/\(thisRecipePost.id)", dataToSave: thisRecipePost.dictionary, completion: {_ in })
-                            uploadImage("recipe_\(thisRecipePost.id)_0", image: thisImage, completion: {_ in })
+                            uploadImage("recipe_\(thisRecipePost.id)_0", image: images[0], completion: {_ in })
                         } else {
                             let alertView = SPAlertView(title: "Add a photo", message: "You cannot submit a recipe without a photo", preset: SPAlertPreset.error)
                             alertView.duration = 3
@@ -313,7 +319,7 @@ struct NewPostView: View {
                     }.frame(height:57).frame(maxWidth: .infinity).background(Color.white)
                     .zIndex(1)
                     
-                    imagePicker(image: self.$image, sourceType: self.sourceType).offset(y: -57)
+                    imagePicker(images: self.$images, sourceType: self.sourceType).offset(y: -57)
                 }
                 
         }
