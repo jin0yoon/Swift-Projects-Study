@@ -246,6 +246,20 @@ struct NewPostView: View {
                     }
                     
                     Button(action: {
+                        
+                        var actionsToComplete = 2 + self.images.count
+                        var actionsCompleted = 0
+                        
+                        func check_success(){
+                            print("\(actionsCompleted)/\(actionsToComplete)")
+                            if actionsCompleted == actionsToComplete {
+                                //Add a function to clear all the data on this page
+                                let alertView = SPAlertView(title: "Recipe Submitted", message: "Recipe submitted successfully!", preset: SPAlertPreset.done)
+                                alertView.duration = 3
+                                alertView.present()
+                            }
+                        }
+                        
                         if images.count > 0 {
                             let thisRecipePost = RecipePost(steps: self.steps,
                                                             ingredients: self.ingredients,
@@ -258,8 +272,24 @@ struct NewPostView: View {
                             
                             print(thisRecipePost.dictionary)
                             
-                            firestoreSubmit_data(docRef_string: "recipe/\(thisRecipePost.id)", dataToSave: thisRecipePost.dictionary, completion: {_ in })
-                            uploadImage("recipe_\(thisRecipePost.id)_0", image: images[0].image, completion: {_ in })
+                            self.env.currentUser.publishedRecipes.append(thisRecipePost.id.uuidString)
+                            firestoreSubmit_data(docRef_string: "recipe/\(thisRecipePost.id)", dataToSave: thisRecipePost.dictionary, completion: {_ in
+                                actionsCompleted += 1
+                                check_success()
+                            })
+                            firestoreUpdate_data(docRef_string: "users/\(self.env.currentUser.establishedID)", dataToUpdate: ["publishedRecipes": self.env.currentUser.publishedRecipes], completion: {_ in
+                                actionsCompleted += 1
+                                check_success()
+                            })
+                            for i in 0...self.images.count-1{
+                                let image = self.images[i].image
+                                uploadImage("recipe_\(thisRecipePost.id)_0", image: image, completion: {_ in
+                                    actionsCompleted += 1
+                                    check_success()
+                                })
+                            }
+                            
+                            
                         } else {
                             let alertView = SPAlertView(title: "Add a photo", message: "You cannot submit a recipe without a photo", preset: SPAlertPreset.error)
                             alertView.duration = 3

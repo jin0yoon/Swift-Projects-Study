@@ -41,12 +41,14 @@ class user : NSObject, Identifiable, NSCoding {
     var password: String
     var name: String
     var email: String
+    var publishedRecipes:[String] = []
     
-    init(username:String, password:String, name:String, email:String, _ establishedID:String?){
+    init(username:String, password:String, name:String, email:String, publishedRecipes: [String], _ establishedID:String?){
         self.username = username
         self.password = password
         self.name = name
         self.email = email
+        self.publishedRecipes = publishedRecipes
         
         if let establishedID = establishedID{    //not nil
             self.establishedID = establishedID
@@ -62,6 +64,7 @@ class user : NSObject, Identifiable, NSCoding {
         password = aDecoder.decodeObject(forKey: "password") as? String ?? ""
         name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
         email = aDecoder.decodeObject(forKey: "email") as? String ?? ""
+        publishedRecipes = aDecoder.decodeObject(forKey: "publishedRecipes") as? [String] ?? []
         
     }
     func encode(with aCoder: NSCoder) {
@@ -71,12 +74,13 @@ class user : NSObject, Identifiable, NSCoding {
         aCoder.encode(password, forKey: "password")
         aCoder.encode(name, forKey: "name")
         aCoder.encode(email, forKey: "email")
+        aCoder.encode(publishedRecipes, forKey: "publishedRecipes")
     }
 }
 
 class GlobalEnvironment: ObservableObject{
     
-    @Published var currentUser: user = user.init(username: "", password: "", name: "", email: "", nil)
+    @Published var currentUser: user = user.init(username: "", password: "", name: "", email: "", publishedRecipes: [], nil)
 }
 
 var vLightBLue = Color.init(red: 130/255, green: 209/255, blue: 255/255)

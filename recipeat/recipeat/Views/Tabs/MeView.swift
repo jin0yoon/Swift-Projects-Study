@@ -6,11 +6,64 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct MeView: View {
+    
+    @EnvironmentObject var env: GlobalEnvironment
+    
     var body: some View {
         ZStack {
-            Text("This is me")
+            VStack{
+                HStack{
+                    VStack{
+                        Text("\(env.currentUser.name)")
+                        Text("\(env.currentUser.username) || \(env.currentUser.publishedRecipes.count)")
+                    }
+                    Spacer()
+                    Image(systemName: "timelapse")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 90, height: 90)
+                        .background(Color.yellow)
+                        .cornerRadius(45)
+                }.padding()
+                
+                HStack{
+                    Button(action: {
+                        
+                    }, label: {
+                        Spacer()
+                        Text("Message")
+                            .padding(3)
+                            .foregroundColor(.black)
+                        Spacer()
+                            
+                    })
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Spacer()
+                        Text("Follow")
+                            .padding(3)
+                            .foregroundColor(.white)
+                        Spacer()
+                    })
+                    .background(darkBlue)
+                    .cornerRadius(5)
+                }
+                
+                ScrollView{
+                    ForEach(0..<20){_ in
+                        HStack{
+                            Spacer()
+                            Text("This is a recipe post")
+                        }.frame(height: 50)
+                    }
+                }.background(Color.red)
+            }
+            
         }.navigationBarTitle("").navigationBarHidden(true)
     }
 }
