@@ -257,6 +257,7 @@ struct NewPostView: View {
                                 let alertView = SPAlertView(title: "Recipe Submitted", message: "Recipe submitted successfully!", preset: SPAlertPreset.done)
                                 alertView.duration = 3
                                 alertView.present()
+                                self.clearPage()
                             }
                         }
                         
@@ -475,6 +476,14 @@ struct NewPostView: View {
         }
         
         
+    }
+    
+    func clearPage(){
+        images.removeAll()
+        halfModal_textField1_val = ""
+        halfModal_textField2_val = ""
+        ingredients = []
+        steps = []
     }
     
    
