@@ -8,6 +8,11 @@
 import SwiftUI
 import SPAlert
 
+struct Identifiable_UIImage: Identifiable {
+    var id = UUID()
+    var image : UIImage
+}
+
 enum new_StepOrIngredient {
     case Step, Ingredient
 }
@@ -19,7 +24,7 @@ struct NewPostView: View {
     @State var showSheet = false
     @State var showImagePicker = false
     @State var sourceType:UIImagePickerController.SourceType = .camera
-    @State private var images:[UIImage] = []
+    @State private var images:[Identifiable_UIImage] = []
     
     @State var halfModal_shown = false
     
@@ -73,7 +78,7 @@ struct NewPostView: View {
                     HStack{
                         if images.count > 0 {
                             HStack{
-                                Image(uiImage: images[0])
+                                Image(uiImage: images[0].image)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
@@ -259,14 +264,14 @@ struct NewPostView: View {
                                                             postingUser: self.env.currentUser.establishedID,
                                                             description: "",
                                                             numberOfLikes: 0,
-                                                            image: Image(uiImage: images[0])
+                                                            image: Image(uiImage: images[0].image)
                                 
                             )
                             
                             print(thisRecipePost.dictionary)
                             
                             firestoreSubmit_data(docRef_string: "recipe/\(thisRecipePost.id)", dataToSave: thisRecipePost.dictionary, completion: {_ in })
-                            uploadImage("recipe_\(thisRecipePost.id)_0", image: images[0], completion: {_ in })
+                            uploadImage("recipe_\(thisRecipePost.id)_0", image: images[0].image, completion: {_ in })
                         } else {
                             let alertView = SPAlertView(title: "Add a photo", message: "You cannot submit a recipe without a photo", preset: SPAlertPreset.error)
                             alertView.duration = 3
@@ -292,17 +297,30 @@ struct NewPostView: View {
             .navigationBarTitle("").navigationBarHidden(true)
             .sheet(isPresented: $showImagePicker){
                 VStack(spacing:0){
-                    ScrollView(.horizontal) {
+                    if self.images.count > 0{
+                        ScrollView(.horizontal) {
+                            HStack{
+                                ForEach(self.images, id: \.id){ i in
+                                    
+                                    Image(uiImage: i.image)
+                                        .resizable()
+                                        .frame(width:200)
+                                        .scaledToFit()
+                                        .shadow(radius:3)
+                                }
+                            }.padding()
+                        }
+                        .frame(height:240)
+                        .background(Color.white)
+                    }else{
                         HStack{
-                            ForEach(0..<8){_ in
-                                Rectangle().frame(width:200, height: 200)
-                                    .background(Color.red)
-                                    .shadow(radius:3)
-                            }
-                        }.padding()
+                            Spacer()
+                            Text("Please select an image from below")
+                            Spacer()
+                        }.frame(height:240)
+                        .background(Color.white)
                     }
-                    .frame(height:240)
-                    .background(Color.white)
+                    
                     
                     HStack{
                         Button(action: {self.showImagePicker.toggle()}){
