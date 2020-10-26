@@ -8,10 +8,7 @@
 import SwiftUI
 import SPAlert
 
-struct Identifiable_UIImage: Identifiable {
-    var id = UUID()
-    var image : UIImage
-}
+
 
 enum new_StepOrIngredient {
     case Step, Ingredient

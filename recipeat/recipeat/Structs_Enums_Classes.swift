@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+struct trunc_RecipePost: Identifiable {
+    var id = UUID()
+}
+
 struct RecipePost: Identifiable {
     var id = UUID()
     var steps: [Step]
@@ -30,6 +34,12 @@ struct RecipePost: Identifiable {
         ]
     }
 }
+
+struct Identifiable_UIImage: Identifiable {
+    var id = UUID()
+    var image : UIImage
+}
+
 
 //In global environment we need to store the users document.doc
 //to be the value of a new property in the user structure
