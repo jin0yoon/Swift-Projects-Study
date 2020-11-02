@@ -55,10 +55,12 @@ struct MeView: View {
                 }
                 
                 ScrollView{
-                    ForEach(0..<env.currentUser.publishedRecipes.count){ i in
-                        
-                        Me_PostView()
-                    }
+                    VStack(spacing:0) {
+                        ForEach(0..<env.currentUser.publishedRecipes.count){ i in
+                            
+                            Me_PostView()
+                        }
+                    }.background(Color.red)
                 }
             }
             
