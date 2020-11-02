@@ -27,6 +27,7 @@
 		4581387F253D66CF00745975 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813877253D66CF00745975 /* PostView.swift */; };
 		45813884253D670600745975 /* Structs_Enums_Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45813883253D670600745975 /* Structs_Enums_Classes.swift */; };
 		4581388F253D774C00745975 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4581388E253D774C00745975 /* GoogleService-Info.plist */; };
+		45A4846A2547B6980027BCA1 /* ModifyRecipePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A484692547B6980027BCA1 /* ModifyRecipePost.swift */; };
 		45D996AF25419D55005741FD /* HelperFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996AE25419D55005741FD /* HelperFuncs.swift */; };
 		45D996B72541AB94005741FD /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D996B62541AB94005741FD /* NewPostView.swift */; };
 		D0ED4C7EE9A9DDCCC6E420A7 /* Pods_recipeat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFAF51734EA9CE770498C9A /* Pods_recipeat.framework */; };
@@ -61,6 +62,7 @@
 		45813877253D66CF00745975 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		45813883253D670600745975 /* Structs_Enums_Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs_Enums_Classes.swift; sourceTree = "<group>"; };
 		4581388E253D774C00745975 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45A484692547B6980027BCA1 /* ModifyRecipePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyRecipePost.swift; sourceTree = "<group>"; };
 		45D996AE25419D55005741FD /* HelperFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFuncs.swift; sourceTree = "<group>"; };
 		45D996B62541AB94005741FD /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		4A635FB6DB561A7DE29270FD /* Pods-recipeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeat.release.xcconfig"; path = "Target Support Files/Pods-recipeat/Pods-recipeat.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				45813872253D66CF00745975 /* LoginView.swift */,
 				45813874253D66CF00745975 /* SignUp.swift */,
 				45813873253D66CF00745975 /* TabbedRootView.swift */,
+				45A484692547B6980027BCA1 /* ModifyRecipePost.swift */,
 				45813875253D66CF00745975 /* ReusableViews */,
 				4581386E253D66CF00745975 /* Tabs */,
 			);
@@ -342,6 +345,7 @@
 				45813878253D66CF00745975 /* SearchView.swift in Sources */,
 				45813835253D65E800745975 /* AppDelegate.swift in Sources */,
 				45813837253D65E800745975 /* SceneDelegate.swift in Sources */,
+				45A4846A2547B6980027BCA1 /* ModifyRecipePost.swift in Sources */,
 				45813879253D66CF00745975 /* HomeView.swift in Sources */,
 				4581387D253D66CF00745975 /* SignUp.swift in Sources */,
 				45696771254254A600663FB7 /* ImagePicker.swift in Sources */,
