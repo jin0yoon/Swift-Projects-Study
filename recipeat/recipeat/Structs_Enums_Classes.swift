@@ -10,10 +10,21 @@ import SwiftUI
 
 struct trunc_RecipePost: Identifiable {
     var id = UUID()
+    var title:String
+    var description:String
+    
+    var dictionary: [String: Any]{
+        return [
+            "id": id.uuidString,
+            "title": title,
+            "description": description
+        ]
+    }
 }
 
 struct RecipePost: Identifiable {
     var id = UUID()
+    var title:String
     var steps: [Step]
     var ingredients: [Ingredient]
     var postingUser: String
@@ -25,6 +36,7 @@ struct RecipePost: Identifiable {
     var dictionary: [String: Any]{
         return[
             "id" : id.uuidString,
+            "title": title,
             "steps" : steps.formatForFirebase(),
             "ingredients" : ingredients.formatForFirebase(),
             "postingUser" : postingUser,

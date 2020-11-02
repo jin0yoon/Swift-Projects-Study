@@ -10,11 +10,11 @@ import SwiftUI
 struct HomeView: View {
     
     var HomePosts: [RecipePost] = [
-        RecipePost(steps: [], ingredients: [], postingUser: "person", description: "This is a long description.This is a long description.This is a long description.This is a long description.", numberOfLikes: 1122, image: Image(systemName: "timelapse")),
-        RecipePost(steps: [], ingredients: [], postingUser: "person2", description: "person2person2person2person2person2person2person2person2person2person2person2person2person2person2", numberOfLikes: 2122, image: Image(systemName: "timelapse")),
-        RecipePost(steps: [], ingredients: [], postingUser: "person3", description: "person3person3person3person3person3person3person3person3person3person3person3person3person3", numberOfLikes: 3122, image: Image(systemName: "timelapse")),
-        RecipePost(steps: [], ingredients: [], postingUser: "person4", description: "person4person4person4person4person4person4person4person4person4person4person4person4person4person4person4", numberOfLikes: 4122, image: Image(systemName: "timelapse")),
-        RecipePost(steps: [], ingredients: [], postingUser: "person5", description: "person5person5person5person5person5person5person5person5person5person5person5person5person5person5person5", numberOfLikes: 5122, image: Image(systemName: "timelapse"))
+        RecipePost(title: "", steps: [], ingredients: [], postingUser: "person", description: "This is a long description.This is a long description.This is a long description.This is a long description.", numberOfLikes: 1122, image: Image(systemName: "timelapse")),
+        RecipePost(title: "", steps: [], ingredients: [], postingUser: "person2", description: "person2person2person2person2person2person2person2person2person2person2person2person2person2person2", numberOfLikes: 2122, image: Image(systemName: "timelapse")),
+        RecipePost(title: "", steps: [], ingredients: [], postingUser: "person3", description: "person3person3person3person3person3person3person3person3person3person3person3person3person3", numberOfLikes: 3122, image: Image(systemName: "timelapse")),
+        RecipePost(title: "", steps: [], ingredients: [], postingUser: "person4", description: "person4person4person4person4person4person4person4person4person4person4person4person4person4person4person4", numberOfLikes: 4122, image: Image(systemName: "timelapse")),
+        RecipePost(title: "", steps: [], ingredients: [], postingUser: "person5", description: "person5person5person5person5person5person5person5person5person5person5person5person5person5person5person5", numberOfLikes: 5122, image: Image(systemName: "timelapse"))
     ]
     
     var body: some View {
