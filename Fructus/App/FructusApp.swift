@@ -7,11 +7,23 @@
 
 import SwiftUI
 
+
 @main
 struct FructusApp: App {
+    
+    //AppStorage -> new dedicated property of wrapper for reading values from user defaults.
+    //automatically invalidates the apps body property on a value change and refresh its UI immediately
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            
+            if isOnboarding{
+                OnboardingView()
+            }else{
+                ContentView()
+            }
+            
         }
     }
 }
