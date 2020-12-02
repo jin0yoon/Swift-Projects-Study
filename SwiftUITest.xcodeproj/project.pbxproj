@@ -49,6 +49,9 @@
 		456E8BBA2527476800B94C90 /* SwiftUIToggleSwitchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E8BB92527476800B94C90 /* SwiftUIToggleSwitchTest.swift */; };
 		459D4C16255E252100A121E3 /* BarChart_Clickable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4C15255E252100A121E3 /* BarChart_Clickable.swift */; };
 		45AC1775256BBDB300E42AA1 /* ComplexAnimationHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC1774256BBDB300E42AA1 /* ComplexAnimationHome.swift */; };
+		45F869602577AB6C0006DD03 /* ComplexAnimationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8695F2577AB6C0006DD03 /* ComplexAnimationContentView.swift */; };
+		45F869632577AC8A0006DD03 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F869622577AC8A0006DD03 /* TabButton.swift */; };
+		45F869672577AEF90006DD03 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F869662577AEF90006DD03 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,9 @@
 		456E8BB92527476800B94C90 /* SwiftUIToggleSwitchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIToggleSwitchTest.swift; sourceTree = "<group>"; };
 		459D4C15255E252100A121E3 /* BarChart_Clickable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart_Clickable.swift; sourceTree = "<group>"; };
 		45AC1774256BBDB300E42AA1 /* ComplexAnimationHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAnimationHome.swift; sourceTree = "<group>"; };
+		45F8695F2577AB6C0006DD03 /* ComplexAnimationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAnimationContentView.swift; sourceTree = "<group>"; };
+		45F869622577AC8A0006DD03 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		45F869662577AEF90006DD03 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +233,9 @@
 		45AC1771256BBD8900E42AA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				45F8695F2577AB6C0006DD03 /* ComplexAnimationContentView.swift */,
 				45AC1774256BBDB300E42AA1 /* ComplexAnimationHome.swift */,
+				45F869622577AC8A0006DD03 /* TabButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 		45AC1772256BBD8E00E42AA1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45F869662577AEF90006DD03 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +323,7 @@
 				452965482529E3CC006DDBE8 /* SwiftUIPreviewTest.swift in Sources */,
 				452F685C25513F61005FD3F7 /* ObservedObjectTest.swift in Sources */,
 				452965392529E392006DDBE8 /* SwiftUISliderTest.swift in Sources */,
+				45F869672577AEF90006DD03 /* Item.swift in Sources */,
 				4529654D2529F1CD006DDBE8 /* SwiftUIDinamicListTest.swift in Sources */,
 				4529655E2529F889006DDBE8 /* SwiftUIFormDisableTest.swift in Sources */,
 				452F685525513F48005FD3F7 /* StateTest.swift in Sources */,
@@ -335,6 +345,8 @@
 				45666F8C25401ED6000B5516 /* BarChart.swift in Sources */,
 				45296568252A00FD006DDBE8 /* SwiftUIPickerInFormTest.swift in Sources */,
 				4529653C2529E3A2006DDBE8 /* SwiftUINavigationViewTest.swift in Sources */,
+				45F869632577AC8A0006DD03 /* TabButton.swift in Sources */,
+				45F869602577AB6C0006DD03 /* ComplexAnimationContentView.swift in Sources */,
 				452493A2252C0A2100AAF843 /* SwiftUIStepperTest.swift in Sources */,
 				452965422529E3B6006DDBE8 /* SwiftUIAlertTest.swift in Sources */,
 				452965302529E2E9006DDBE8 /* SwiftUIListTest.swift in Sources */,
