@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct SwiftUICoreDataApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, CoreDataManager.shared.persistentContainer.viewContext)
+                
         }
     }
+    
 }
