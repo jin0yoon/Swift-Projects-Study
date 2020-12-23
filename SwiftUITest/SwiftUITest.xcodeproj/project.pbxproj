@@ -37,6 +37,8 @@
 		452F686125514694005FD3F7 /* EnvironmentObjectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F686025514694005FD3F7 /* EnvironmentObjectTest.swift */; };
 		4532415D253EA9EA00AD1199 /* DinamicGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532415C253EA9EA00AD1199 /* DinamicGridView.swift */; };
 		4533B8402592F2D7006B1088 /* GeometryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533B83F2592F2D7006B1088 /* GeometryTest.swift */; };
+		4533B846259312BE006B1088 /* GeometryTest2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533B845259312BE006B1088 /* GeometryTest2.swift */; };
+		4533B84925931B78006B1088 /* GeometryTest3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533B84825931B78006B1088 /* GeometryTest3.swift */; };
 		45594E052522F8A2001ADDCC /* SwiftUITestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */; };
 		45594E072522F8A2001ADDCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E062522F8A2001ADDCC /* ContentView.swift */; };
 		45594E092522F8A2001ADDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45594E082522F8A2001ADDCC /* Assets.xcassets */; };
@@ -86,6 +88,8 @@
 		452F686025514694005FD3F7 /* EnvironmentObjectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectTest.swift; sourceTree = "<group>"; };
 		4532415C253EA9EA00AD1199 /* DinamicGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinamicGridView.swift; sourceTree = "<group>"; };
 		4533B83F2592F2D7006B1088 /* GeometryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTest.swift; sourceTree = "<group>"; };
+		4533B845259312BE006B1088 /* GeometryTest2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTest2.swift; sourceTree = "<group>"; };
+		4533B84825931B78006B1088 /* GeometryTest3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTest3.swift; sourceTree = "<group>"; };
 		45594E012522F8A2001ADDCC /* SwiftUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestApp.swift; sourceTree = "<group>"; };
 		45594E062522F8A2001ADDCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				4533B83F2592F2D7006B1088 /* GeometryTest.swift */,
+				4533B845259312BE006B1088 /* GeometryTest2.swift */,
+				4533B84825931B78006B1088 /* GeometryTest3.swift */,
 			);
 			path = GeometryReader;
 			sourceTree = "<group>";
@@ -201,8 +207,8 @@
 		45594E032522F8A2001ADDCC /* SwiftUITest */ = {
 			isa = PBXGroup;
 			children = (
-				4533B83E2592F2C3006B1088 /* GeometryReader */,
 				45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */,
+				4533B83E2592F2C3006B1088 /* GeometryReader */,
 				45AC176C256BBD4500E42AA1 /* ComplexAnimations */,
 				452F685325513F27005FD3F7 /* DataBinding */,
 				45666F8A25401EC8000B5516 /* Chart */,
@@ -363,11 +369,13 @@
 				452965422529E3B6006DDBE8 /* SwiftUIAlertTest.swift in Sources */,
 				452965302529E2E9006DDBE8 /* SwiftUIListTest.swift in Sources */,
 				452F685925513F52005FD3F7 /* BindingTest.swift in Sources */,
+				4533B846259312BE006B1088 /* GeometryTest2.swift in Sources */,
 				45594E072522F8A2001ADDCC /* ContentView.swift in Sources */,
 				45594E052522F8A2001ADDCC /* SwiftUITestApp.swift in Sources */,
 				456E8BB62527458F00B94C90 /* SwiftUINavigationLink.swift in Sources */,
 				452965502529F23D006DDBE8 /* SwiftUIListDeleteTest.swift in Sources */,
 				459D4C16255E252100A121E3 /* BarChart_Clickable.swift in Sources */,
+				4533B84925931B78006B1088 /* GeometryTest3.swift in Sources */,
 				45594E1925230274001ADDCC /* SwiftUITextTest.swift in Sources */,
 				456E8BB22527415300B94C90 /* SwiftUIButtonTest.swift in Sources */,
 				456E8BBA2527476800B94C90 /* SwiftUIToggleSwitchTest.swift in Sources */,
