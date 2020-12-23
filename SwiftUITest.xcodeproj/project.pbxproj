@@ -36,6 +36,7 @@
 		452F685C25513F61005FD3F7 /* ObservedObjectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F685B25513F61005FD3F7 /* ObservedObjectTest.swift */; };
 		452F686125514694005FD3F7 /* EnvironmentObjectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F686025514694005FD3F7 /* EnvironmentObjectTest.swift */; };
 		4532415D253EA9EA00AD1199 /* DinamicGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532415C253EA9EA00AD1199 /* DinamicGridView.swift */; };
+		4533B8402592F2D7006B1088 /* GeometryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533B83F2592F2D7006B1088 /* GeometryTest.swift */; };
 		45594E052522F8A2001ADDCC /* SwiftUITestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */; };
 		45594E072522F8A2001ADDCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45594E062522F8A2001ADDCC /* ContentView.swift */; };
 		45594E092522F8A2001ADDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45594E082522F8A2001ADDCC /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		452F685B25513F61005FD3F7 /* ObservedObjectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservedObjectTest.swift; sourceTree = "<group>"; };
 		452F686025514694005FD3F7 /* EnvironmentObjectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectTest.swift; sourceTree = "<group>"; };
 		4532415C253EA9EA00AD1199 /* DinamicGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinamicGridView.swift; sourceTree = "<group>"; };
+		4533B83F2592F2D7006B1088 /* GeometryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTest.swift; sourceTree = "<group>"; };
 		45594E012522F8A2001ADDCC /* SwiftUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestApp.swift; sourceTree = "<group>"; };
 		45594E062522F8A2001ADDCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = GridView;
 			sourceTree = "<group>";
 		};
+		4533B83E2592F2C3006B1088 /* GeometryReader */ = {
+			isa = PBXGroup;
+			children = (
+				4533B83F2592F2D7006B1088 /* GeometryTest.swift */,
+			);
+			path = GeometryReader;
+			sourceTree = "<group>";
+		};
 		45594DF82522F8A2001ADDCC = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 		45594E032522F8A2001ADDCC /* SwiftUITest */ = {
 			isa = PBXGroup;
 			children = (
+				4533B83E2592F2C3006B1088 /* GeometryReader */,
 				45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */,
 				45AC176C256BBD4500E42AA1 /* ComplexAnimations */,
 				452F685325513F27005FD3F7 /* DataBinding */,
@@ -322,6 +333,7 @@
 				452493A9252C20D700AAF843 /* SwiftUITabViewContent1.swift in Sources */,
 				452965482529E3CC006DDBE8 /* SwiftUIPreviewTest.swift in Sources */,
 				452F685C25513F61005FD3F7 /* ObservedObjectTest.swift in Sources */,
+				4533B8402592F2D7006B1088 /* GeometryTest.swift in Sources */,
 				452965392529E392006DDBE8 /* SwiftUISliderTest.swift in Sources */,
 				45F869672577AEF90006DD03 /* Item.swift in Sources */,
 				4529654D2529F1CD006DDBE8 /* SwiftUIDinamicListTest.swift in Sources */,
@@ -489,6 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUITest/Preview Content\"";
+				DEVELOPMENT_TEAM = GUHPQDWLGB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUITest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -510,6 +523,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUITest/Preview Content\"";
+				DEVELOPMENT_TEAM = GUHPQDWLGB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUITest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

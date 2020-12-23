@@ -74,24 +74,24 @@ struct ComplexAnimationHome: View {
                     .padding()
                     .padding(.top, 5)
                     
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(),spacing: 20), count: 2),spacing: 25){
-                        
-                        ForEach(items){item in
-                            
-                            // Card View...
-                            
-                            CardView(item: item, animation: animation)
-                                .onTapGesture {
-                                    
-                                    withAnimation(.spring()){
-                                        
-                                        selectedItem = item
-                                        show.toggle()
-                                    }
-                                }
-                        }
-                    }
-                    .padding()
+//                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(),spacing: 20), count: 2),spacing: 25){
+//
+//                        ForEach(items){item in
+//
+//                            // Card View...
+//
+//                            CardView(item: item, animation: animation)
+//                                .onTapGesture {
+//
+//                                    withAnimation(.spring()){
+//
+//                                        selectedItem = item
+//                                        show.toggle()
+//                                    }
+//                                }
+//                        }
+//                    }
+//                    .padding()
                 }
             }
             
