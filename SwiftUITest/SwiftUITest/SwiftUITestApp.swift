@@ -11,7 +11,11 @@ import SwiftUI
 struct SwiftUITestApp: App {
     var body: some Scene {
         WindowGroup {
-            ComplexAnimationContentView()
+            GeometryTest()
+            GeometryTest2()
+            GeometryTest3()
+            SwiftUITextTest()
+            SwiftUIDateTest()
         }
     }
 }
