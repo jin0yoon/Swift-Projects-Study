@@ -52,6 +52,7 @@
 		456E8BBA2527476800B94C90 /* SwiftUIToggleSwitchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E8BB92527476800B94C90 /* SwiftUIToggleSwitchTest.swift */; };
 		459D4C16255E252100A121E3 /* BarChart_Clickable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D4C15255E252100A121E3 /* BarChart_Clickable.swift */; };
 		45AC1775256BBDB300E42AA1 /* ComplexAnimationHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AC1774256BBDB300E42AA1 /* ComplexAnimationHome.swift */; };
+		45B4196B259D95FF00173D6C /* GeometryTest4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4196A259D95FF00173D6C /* GeometryTest4.swift */; };
 		45F869602577AB6C0006DD03 /* ComplexAnimationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8695F2577AB6C0006DD03 /* ComplexAnimationContentView.swift */; };
 		45F869632577AC8A0006DD03 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F869622577AC8A0006DD03 /* TabButton.swift */; };
 		45F869672577AEF90006DD03 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F869662577AEF90006DD03 /* Item.swift */; };
@@ -105,6 +106,7 @@
 		456E8BB92527476800B94C90 /* SwiftUIToggleSwitchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIToggleSwitchTest.swift; sourceTree = "<group>"; };
 		459D4C15255E252100A121E3 /* BarChart_Clickable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart_Clickable.swift; sourceTree = "<group>"; };
 		45AC1774256BBDB300E42AA1 /* ComplexAnimationHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAnimationHome.swift; sourceTree = "<group>"; };
+		45B4196A259D95FF00173D6C /* GeometryTest4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTest4.swift; sourceTree = "<group>"; };
 		45F8695F2577AB6C0006DD03 /* ComplexAnimationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAnimationContentView.swift; sourceTree = "<group>"; };
 		45F869622577AC8A0006DD03 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		45F869662577AEF90006DD03 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				4533B83F2592F2D7006B1088 /* GeometryTest.swift */,
 				4533B845259312BE006B1088 /* GeometryTest2.swift */,
 				4533B84825931B78006B1088 /* GeometryTest3.swift */,
+				45B4196A259D95FF00173D6C /* GeometryTest4.swift */,
 			);
 			path = GeometryReader;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				45AC1775256BBDB300E42AA1 /* ComplexAnimationHome.swift in Sources */,
 				452965532529F2D7006DDBE8 /* SwiftUIListEditTest.swift in Sources */,
 				45666F8C25401ED6000B5516 /* BarChart.swift in Sources */,
+				45B4196B259D95FF00173D6C /* GeometryTest4.swift in Sources */,
 				45296568252A00FD006DDBE8 /* SwiftUIPickerInFormTest.swift in Sources */,
 				4529653C2529E3A2006DDBE8 /* SwiftUINavigationViewTest.swift in Sources */,
 				45F869632577AC8A0006DD03 /* TabButton.swift in Sources */,
