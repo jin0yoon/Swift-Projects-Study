@@ -11,6 +11,7 @@
 		45FD711725A5A63E00E5354D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD711625A5A63E00E5354D /* ContentView.swift */; };
 		45FD711925A5A64000E5354D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FD711825A5A64000E5354D /* Assets.xcassets */; };
 		45FD711C25A5A64000E5354D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FD711B25A5A64000E5354D /* Preview Assets.xcassets */; };
+		45FD712725A5A6D900E5354D /* DrawingDocModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45FD712525A5A6D900E5354D /* DrawingDocModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		45FD711825A5A64000E5354D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45FD711B25A5A64000E5354D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45FD711D25A5A64000E5354D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45FD712625A5A6D900E5354D /* DrawingDoc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrawingDoc.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				45FD711425A5A63E00E5354D /* SwiftUIPencikitTestApp.swift */,
 				45FD711625A5A63E00E5354D /* ContentView.swift */,
+				45FD712525A5A6D900E5354D /* DrawingDocModel.xcdatamodeld */,
 				45FD711825A5A64000E5354D /* Assets.xcassets */,
 				45FD711D25A5A64000E5354D /* Info.plist */,
 				45FD711A25A5A64000E5354D /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45FD711725A5A63E00E5354D /* ContentView.swift in Sources */,
+				45FD712725A5A6D900E5354D /* DrawingDocModel.xcdatamodeld in Sources */,
 				45FD711525A5A63E00E5354D /* SwiftUIPencikitTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +332,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45FD712525A5A6D900E5354D /* DrawingDocModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45FD712625A5A6D900E5354D /* DrawingDoc.xcdatamodel */,
+			);
+			currentVersion = 45FD712625A5A6D900E5354D /* DrawingDoc.xcdatamodel */;
+			path = DrawingDocModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 45FD710925A5A63E00E5354D /* Project object */;
 }
