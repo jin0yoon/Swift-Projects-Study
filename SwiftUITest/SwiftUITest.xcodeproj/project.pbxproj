@@ -56,6 +56,8 @@
 		45F869602577AB6C0006DD03 /* ComplexAnimationContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F8695F2577AB6C0006DD03 /* ComplexAnimationContentView.swift */; };
 		45F869632577AC8A0006DD03 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F869622577AC8A0006DD03 /* TabButton.swift */; };
 		45F869672577AEF90006DD03 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F869662577AEF90006DD03 /* Item.swift */; };
+		45FD713A25AAC4A500E5354D /* TicTacToeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD713925AAC4A500E5354D /* TicTacToeGame.swift */; };
+		45FD713F25AAC75D00E5354D /* CardFlipAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD713E25AAC75D00E5354D /* CardFlipAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		45F8695F2577AB6C0006DD03 /* ComplexAnimationContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexAnimationContentView.swift; sourceTree = "<group>"; };
 		45F869622577AC8A0006DD03 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		45F869662577AEF90006DD03 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		45FD713925AAC4A500E5354D /* TicTacToeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeGame.swift; sourceTree = "<group>"; };
+		45FD713E25AAC75D00E5354D /* CardFlipAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				45594E042522F8A2001ADDCC /* SwiftUITestApp.swift */,
+				45FD713425AAC47A00E5354D /* CardFlip */,
 				4533B83E2592F2C3006B1088 /* GeometryReader */,
 				45AC176C256BBD4500E42AA1 /* ComplexAnimations */,
 				452F685325513F27005FD3F7 /* DataBinding */,
@@ -266,6 +271,15 @@
 				45F869662577AEF90006DD03 /* Item.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		45FD713425AAC47A00E5354D /* CardFlip */ = {
+			isa = PBXGroup;
+			children = (
+				45FD713925AAC4A500E5354D /* TicTacToeGame.swift */,
+				45FD713E25AAC75D00E5354D /* CardFlipAnimation.swift */,
+			);
+			path = CardFlip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +371,7 @@
 				45594E2025230350001ADDCC /* SwiftUIImageTest.swift in Sources */,
 				452965332529E377006DDBE8 /* SwiftUIFormTest.swift in Sources */,
 				45594E1D252302FE001ADDCC /* SwiftUIDateTest.swift in Sources */,
+				45FD713F25AAC75D00E5354D /* CardFlipAnimation.swift in Sources */,
 				452965362529E385006DDBE8 /* SwiftUIPickerTest.swift in Sources */,
 				4529655B2529F846006DDBE8 /* SwiftUIFormSectionTest.swift in Sources */,
 				452F686125514694005FD3F7 /* EnvironmentObjectTest.swift in Sources */,
@@ -375,6 +390,7 @@
 				452F685925513F52005FD3F7 /* BindingTest.swift in Sources */,
 				4533B846259312BE006B1088 /* GeometryTest2.swift in Sources */,
 				45594E072522F8A2001ADDCC /* ContentView.swift in Sources */,
+				45FD713A25AAC4A500E5354D /* TicTacToeGame.swift in Sources */,
 				45594E052522F8A2001ADDCC /* SwiftUITestApp.swift in Sources */,
 				456E8BB62527458F00B94C90 /* SwiftUINavigationLink.swift in Sources */,
 				452965502529F23D006DDBE8 /* SwiftUIListDeleteTest.swift in Sources */,

@@ -11,11 +11,14 @@ import SwiftUI
 struct SwiftUITestApp: App {
     var body: some Scene {
         WindowGroup {
-            ZStack{
-                GeometryTest()
-                GeometryTest2()
-                GeometryTest3()
-            }
+            
+            CardFlipAnimation()
+            
+//            ZStack{
+//                GeometryTest()
+//                GeometryTest2()
+//                GeometryTest3()
+//            }
             
 //            SwiftUITextTest()
 //            SwiftUIDateTest()
