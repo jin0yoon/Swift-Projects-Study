@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct StandardHomeMovie: View {
     
     var movie: Movie
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        KFImage(movie.thumbnailURL)
     }
 }
 
 struct StandardHomeMovie_Previews: PreviewProvider {
     static var previews: some View {
-        StandardHomeMovie(movie: Movie(id: <#T##String#>, name: <#T##String#>, thumbnailURL: <#T##URL#>))
+        StandardHomeMovie(movie: exampleMovie1)
     }
 }
