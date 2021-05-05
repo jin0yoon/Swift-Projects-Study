@@ -3,6 +3,9 @@
 Swift(SwiftUI, UIkit) project들을 보관하는 repository입니다.
  
 SwiftUI
-NetflixClone
+- NetflixClone
+- ChatApp
+- Fruta
+- TouchDown
 
 UIkit
