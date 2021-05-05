@@ -6,6 +6,7 @@ SwiftUI
 - NetflixClone
 - ChatApp
 - Fruta
+- Africa
 - TouchDown
 
 UIkit
