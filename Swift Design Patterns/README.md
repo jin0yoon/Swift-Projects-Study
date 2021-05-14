@@ -1,6 +1,6 @@
 # Swift Design Patterns
 
-Swift Design Pattern들을 학습한 기록을 보관하는 repository입니다.
+Swift Design Pattern들을 학습한 내용들을 보관하는 repository입니다.
  
 - MVC Pattern
 - Delegation Pattern
