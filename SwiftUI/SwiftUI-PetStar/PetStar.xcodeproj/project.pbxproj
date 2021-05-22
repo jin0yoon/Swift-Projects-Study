@@ -13,6 +13,7 @@
 		45EA6B89265501DF00D72A67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EA6B88265501DF00D72A67 /* Preview Assets.xcassets */; };
 		45EA6B94265501E000D72A67 /* PetStarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA6B93265501E000D72A67 /* PetStarTests.swift */; };
 		45EA6B9F265501E000D72A67 /* PetStarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA6B9E265501E000D72A67 /* PetStarUITests.swift */; };
+		45EA6BFB265937C100D72A67 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA6BFA265937C100D72A67 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		45EA6B9A265501E000D72A67 /* PetStarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetStarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45EA6B9E265501E000D72A67 /* PetStarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStarUITests.swift; sourceTree = "<group>"; };
 		45EA6BA0265501E000D72A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45EA6BFA265937C100D72A67 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +97,8 @@
 		45EA6B80265501DD00D72A67 /* PetStar */ = {
 			isa = PBXGroup;
 			children = (
+				45EA6BFC265937C500D72A67 /* View */,
 				45EA6B81265501DD00D72A67 /* PetStarApp.swift */,
-				45EA6B83265501DD00D72A67 /* ContentView.swift */,
 				45EA6B85265501DF00D72A67 /* Assets.xcassets */,
 				45EA6B8A265501DF00D72A67 /* Info.plist */,
 				45EA6B87265501DF00D72A67 /* Preview Content */,
@@ -128,6 +130,15 @@
 				45EA6BA0265501E000D72A67 /* Info.plist */,
 			);
 			path = PetStarUITests;
+			sourceTree = "<group>";
+		};
+		45EA6BFC265937C500D72A67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45EA6B83265501DD00D72A67 /* ContentView.swift */,
+				45EA6BFA265937C100D72A67 /* LoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EA6BFB265937C100D72A67 /* LoginView.swift in Sources */,
 				45EA6B84265501DD00D72A67 /* ContentView.swift in Sources */,
 				45EA6B82265501DD00D72A67 /* PetStarApp.swift in Sources */,
 			);
