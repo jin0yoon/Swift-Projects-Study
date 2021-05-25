@@ -13,6 +13,7 @@
 		45EA6C11265A382800D72A67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EA6C10265A382800D72A67 /* Preview Assets.xcassets */; };
 		45EA6C1C265A382800D72A67 /* AppleSwiftUITutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA6C1B265A382800D72A67 /* AppleSwiftUITutorialTests.swift */; };
 		45EA6C27265A382900D72A67 /* AppleSwiftUITutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA6C26265A382900D72A67 /* AppleSwiftUITutorialUITests.swift */; };
+		45EA6C35265CE57300D72A67 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 45EA6C34265CE57300D72A67 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		45EA6C22265A382900D72A67 /* AppleSwiftUITutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleSwiftUITutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45EA6C26265A382900D72A67 /* AppleSwiftUITutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSwiftUITutorialUITests.swift; sourceTree = "<group>"; };
 		45EA6C28265A382900D72A67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45EA6C34265CE57300D72A67 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		45EA6BFD265A382600D72A67 = {
 			isa = PBXGroup;
 			children = (
+				45EA6C34265CE57300D72A67 /* README.md */,
 				45EA6C08265A382600D72A67 /* AppleSwiftUITutorial */,
 				45EA6C1A265A382800D72A67 /* AppleSwiftUITutorialTests */,
 				45EA6C25265A382900D72A67 /* AppleSwiftUITutorialUITests */,
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EA6C35265CE57300D72A67 /* README.md in Resources */,
 				45EA6C11265A382800D72A67 /* Preview Assets.xcassets in Resources */,
 				45EA6C0E265A382800D72A67 /* Assets.xcassets in Resources */,
 			);
