@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 var students: [String] = ["amy", "jack", "july"]
 
 var studentsAge: [String:Int] = ["amy":13, "jack":25, "july":21]
@@ -21,3 +23,5 @@ for (key, value) in studentsAge{
 var str = "DFFJFJJaffjdff"
 
 print(str.lowercased())
+
+//: [Next](@next)

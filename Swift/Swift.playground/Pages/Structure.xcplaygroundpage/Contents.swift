@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 var student : [String : Int] = ["amy":13, "jack":25, "july":21]
 
 struct studentStruct{
@@ -83,3 +85,5 @@ struct movie{
 
 var mymovie = movie(name: "타이타닉", year: 1997, director: "제임스 카메론", actor: ["레오나르도 디카프리오", "케이트 윈슬렛"])
 //mymovie.introduce()
+
+//: [Next](@next)
