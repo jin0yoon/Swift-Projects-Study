@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 class Year{
     
     var calendarYear: Int
@@ -40,3 +42,6 @@ year.calendarYear = 2400
 if year.isLeapYear{
     print("2400년은 윤년입니다.")
 }
+
+
+//: [Next](@next)

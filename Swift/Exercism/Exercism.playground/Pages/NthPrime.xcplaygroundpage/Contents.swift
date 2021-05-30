@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 
 /*:
 # Nth Prime
@@ -121,3 +123,6 @@ if (104_743 == Prime.nth(10_001)){
 // airports["LAX"] = "LosAngeles"
 
 // print(airports["LAX"])
+
+
+//: [Next](@next)
